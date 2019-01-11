@@ -54,6 +54,38 @@ ${FiveNineBTN}  //button[@type='button'][contains(.,'5-9 Years')]
 ${TenMoreBTN}   //button[@type='button'][contains(.,'10+ Years')]
 ${HotWaterHeaterHeader}  //div[@class='_jy6h7s'][contains(.,'What is the age of your hot water heater?')]
 ${HVACHeader}  //div[@class='_jy6h7s'][contains(.,'What is the age of your HVAC system(s)?')]
+${KitchenApplianceHeader}  //div[@class='_jy6h7s'][contains(.,'What type of kitchen appliances do you have?')]
+${StainlessSteel}   //button[@type='button'][contains(.,'Stainless Steel')]
+${CeilingsHeader}   //div[@class='_jy6h7s'][contains(.,'What type of ceilings do you have?')]
+${PopcornCeilingButton}  //button[@type='button'][contains(.,'Popcorn')]
+${FlooringHeader}  //div[@class='_jy6h7s'][contains(.,'What type of flooring do you have on the main level?')]
+${HardWoodBtn}  //button[@type='button'][contains(.,'Hardwood')]
+${TileBtn}   //button[@type='button'][contains(.,'Tile')]
+${LaminatedBtn}   //button[@type='button'][contains(.,'Laminated')]
+${CarpetBtn}   //button[@type='button'][contains(.,'Carpet')]
+${OtherBth}   //button[@type='button'][contains(.,'Other')]
+${RequiredValidationText}  //div[@class='_10vebdl'][contains(.,'Required')]
+${LookingToSellTimeHeader}  //div[@class='_jy6h7s'][contains(.,'When are you looking to buy/sell?')]
+${ASAPBtn}  //button[@type='button'][contains(.,'ASAP')]
+${HomeWorthHeader}  //div[@class='_jy6h7s'][contains(.,'How much do you think your home is worth?')]
+${HomeWorthText}  //input[contains(@type,'tel')]
+${CurrentlyOnMarketHeader}  //div[@class='_jy6h7s'][contains(.,'Is your home currently on the market?')]
+${AgentYesValidationText}   //div[@class='_20skg4'][contains(.,'Knock is not able to work with sellers that are currently represented by an agent. We are happy to discuss taking over the listing when it expires. If you can fill us in on your situation, we can decide the best course of action.')]
+${LookingToBuyHeader}  //div[@class='_jy6h7s'][contains(.,'Are you currently looking to buy a home?')]
+${HowDidYouHearHeader}  //div[@class='_jy6h7s'][contains(.,'How did you hear about Knock?')]
+${SituationTextField}   //textarea[contains(@placeholder,'Tell us about your situation')]
+${HaveYouFoundHeader}  //div[@class='_jy6h7s'][contains(.,'Have you found the home you want to buy?')]
+${WorkingWithAnotherAgent}  //div[@class='_jy6h7s'][contains(.,'Are you working with another agent to buy your next home?')]
+${HowDidYouHearHeader}  //div[@class='_jy6h7s'][contains(.,'How did you hear about Knock?')]
+${TVSegmentBtn}  //button[@type='button'][contains(.,'TV Segment')]
+${EnterNameHeader}  //div[@class='_jy6h7s'][contains(.,'Please enter your name')]
+${FirstNameField}  //input[contains(@placeholder,'Your First Name')]
+${LastNameField}    //input[contains(@placeholder,'Your Last Name')]
+${EstimateHeader}  //div[@class='_jy6h7s'][contains(.,'Where should we send your Knock Price Estimate?')]
+${EmailTextField}  //input[@type='email']
+${MobileNumberHeader}  //div[@class='_jy6h7s'][contains(.,'Please enter your mobile number')]
+${PhoneNumberField}  //input[@type='tel']
+${SubmitBtn}  //button[@type='button'][contains(.,'Submit')]
 
 
 
@@ -67,6 +99,22 @@ TradeInWorkflow
     Does Home Have Any
     Updates
     Need Repairs
+    Age of Roof
+    Age of Water Heater
+    Age of HVAC
+    Kitchen Appliances
+    Ceilings
+    Mail Level Floors
+    Buy/Sell
+    Home Worth
+    Currently on the Market
+    Looking to buy
+    Have you Found
+    Working with another Agent?
+    How did you hear
+    Enter Name
+    Enter Your Email
+    Enter Mobile Number
 
 
 Navigate to Page
@@ -192,38 +240,132 @@ Age of Water Heater
 
 
 Age of HVAC
-
-
+    Wait Until Element is Visible  ${HVACHeader}  4
+    Click Button  ${TenMoreBTN}
+    Wait Until Element is Visible  ${KitchenApplianceHeader}  4
 
 
 Kitchen Appliances
+    Wait Until Element is Visible  ${KitchenApplianceHeader}  4
+    Click Button  ${StainlessSteel}
+    Wait Until Element is Visible  ${CeilingsHeader}  4
 
 
 Ceilings
+    Wait Until Element is Visible  ${CeilingsHeader}  4
+    Click Button  ${PopcornCeilingButton}
+    Wait Until Element is Visible  ${FlooringHeader}  4
 
-Mail level Floors
+
+Mail Level Floors
+    Wait Until Element is Visible  ${FlooringHeader}  4
+    Click Button    ${HardWoodBtn}
+#    Click Button    ${HardWoodBtn}
+#    Sleep  2
+#    Wait Until Element is Visible  ${RequiredValidationText}  4
+#    Click Button    ${HardWoodBtn}
+    Click Button    ${TileBtn}
+    Click Button    ${LaminatedBtn}
+    Click Button    ${CarpetBtn}
+    Click Button    ${OtherBth}
+    Click Button    ${NextButton}
+    Wait Until Element is Visible   ${LookingToSellTimeHeader}  4
 
 
-When Buy/Sell
+Buy/Sell
+    Wait Until Element is Visible   ${LookingToSellTimeHeader}  4
+    Click Button  ${ASAPBtn}
+    Wait Until Element is Visible   ${HomeWorthHeader}   4
 
 
 Home Worth
+    Wait Until Element is Visible   ${HomeWorthHeader}   4
+    Click Element  ${HomeWorthText}
+    Input Text  ${HomeWorthText}  350000
+    Click Button    ${NextButton}
+    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
+
 
 Currently on the Market
+    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
+    Click Button  ${YesButton}
+    Wait Until Element is Visible  ${AgentYesValidationText}  4
+    Click Element  ${SituationTextField}
+    Input Text  ${SituationTextField}  This is my situation
+    Wait Until Element is Visible  ${NextButton}  4
+    Click Button    ${NextButton}
+    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Click Button  ${BackButton}
+    Wait Until Element is Visible  ${AgentYesValidationText}  4
+    Click Button  ${BackButton}
+    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
+    Click Button  ${NoButton}
+    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+
 
 Looking to buy
+    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Click Button  ${NoButton}
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Click Button  ${BackButton}
+    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Click Button  ${YesButton}
+    Wait Until Element is Visible  ${HaveYouFoundHeader}  4
+
+
 
 Have you Found
+    Wait Until Element is Visible  ${HaveYouFoundHeader}  4
+    Click Button  ${YesButton}
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Click Button  ${BackButton}
+    Wait Until Element is Visible  ${HaveYouFoundHeader}  4
+    Click Button  ${NoButton}
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Click Button  ${BackButton}
+    Click Button  ${YesButton}
 
 
 Working with another Agent?
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Click Button  ${YesButton}
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Click Button  ${BackButton}
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Click Button  ${NoButton}
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
 
 
 How did you hear
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Click Button   ${TVSegmentBtn}
+    Wait Until Element is Visible  ${EnterNameHeader}  4
+
 
 Enter Name
+    Wait Until Element is Visible  ${EnterNameHeader}  4
+    Click Element  ${FirstNameField}
+    Input Text  ${FirstNameField}  Tom
+    Click Element  ${LastNameField}
+    Input Text  ${LastNameField}  Jones
+    Click Button    ${NextButton}
+    Wait Until Element is Visible  ${EstimateHeader}  4
+
 
 Enter Your Email
+    Wait Until Element is Visible  ${EstimateHeader}  4
+    Click Element  ${EmailTextField}
+    Input Text  ${EmailTextField}  test@tester.com
+    Click Button    ${NextButton}
+
+Enter Mobile Number
+    Wait Until Element is Visible  ${MobileNumberHeader}  4
+    Click Element  ${PhoneNumberField}
+    Input Text  ${PhoneNumberField}  2122222222
+    Wait Until Element is Visible  ${SubmitBtn}
+
+
+
 
 
 
