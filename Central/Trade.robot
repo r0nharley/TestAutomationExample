@@ -228,11 +228,15 @@ Need Repairs
 #    Input Text  ${ImprovementsNeededHeader}  These are my repairs
 
 Age of Roof
+    [Tags]  Roof Age
+    Log To Console  How old is your roof
     Wait Until Element is Visible  ${AgeOfRoofHeader}  4
     Click Button  ${LessThanFiveBTN}
     Wait Until Element is Visible  ${HotWaterHeaterHeader}  4
 
 Age of Water Heater
+    [Tags]  Water Heater Age
+    Log To Console  How old is you Water Heater
     Wait Until Element is Visible  ${HotWaterHeaterHeader}  4
     Click Button  ${FiveNineBTN}
     Wait Until Element is Visible  ${HVACHeader}  4
@@ -240,24 +244,32 @@ Age of Water Heater
 
 
 Age of HVAC
+    [Tags]  HVAC age
+    Log To Console  How old is your HVAC system
     Wait Until Element is Visible  ${HVACHeader}  4
     Click Button  ${TenMoreBTN}
     Wait Until Element is Visible  ${KitchenApplianceHeader}  4
 
 
 Kitchen Appliances
+    [Tags]  Describe Kitchen Appliances
+    Log To Console  What kind of Kitchen Appliances
     Wait Until Element is Visible  ${KitchenApplianceHeader}  4
     Click Button  ${StainlessSteel}
     Wait Until Element is Visible  ${CeilingsHeader}  4
 
 
 Ceilings
+    [Tags]  Describe Ceilings
+    Log To Console  What type of Ceilings
     Wait Until Element is Visible  ${CeilingsHeader}  4
     Click Button  ${PopcornCeilingButton}
     Wait Until Element is Visible  ${FlooringHeader}  4
 
 
 Mail Level Floors
+    [Tags]  Describe Floors
+    Log To Console  What type of Floors
     Wait Until Element is Visible  ${FlooringHeader}  4
     Click Button    ${HardWoodBtn}
 #    Click Button    ${HardWoodBtn}
@@ -273,12 +285,16 @@ Mail Level Floors
 
 
 Buy/Sell
+    [Tags]  Buying or Selling
+    Log To Console  Are you Buying or Selling
     Wait Until Element is Visible   ${LookingToSellTimeHeader}  4
     Click Button  ${ASAPBtn}
     Wait Until Element is Visible   ${HomeWorthHeader}   4
 
 
 Home Worth
+    [Tags]  Home Worth
+    Log To Console   What is your home worth
     Wait Until Element is Visible   ${HomeWorthHeader}   4
     Click Element  ${HomeWorthText}
     Input Text  ${HomeWorthText}  350000
@@ -287,6 +303,8 @@ Home Worth
 
 
 Currently on the Market
+    [Tags]  Home on the Market
+    Log To Console  Is you home currently on the market
     Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${AgentYesValidationText}  4
@@ -304,6 +322,8 @@ Currently on the Market
 
 
 Looking to buy
+    [Tags]  Are you looking to buy a home
+    Log To Console  Are you looking to buy a home
     Wait Until Element is Visible  ${LookingToBuyHeader}  4
     Click Button  ${NoButton}
     Wait Until Element is Visible  ${HowDidYouHearHeader}  4
@@ -315,6 +335,8 @@ Looking to buy
 
 
 Have you Found
+    [Tags]  Have you found your House
+    Log To Console  Have you found a new house
     Wait Until Element is Visible  ${HaveYouFoundHeader}  4
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
@@ -327,6 +349,8 @@ Have you Found
 
 
 Working with another Agent?
+    [Tags]  Working with another Agent Question
+    Log To Console  Are you working with another Agent
     Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${HowDidYouHearHeader}  4
@@ -337,12 +361,16 @@ Working with another Agent?
 
 
 How did you hear
+    [Tags]  How did you hear
+    Log To Console  How did you hear about Knock
     Wait Until Element is Visible  ${HowDidYouHearHeader}  4
     Click Button   ${TVSegmentBtn}
     Wait Until Element is Visible  ${EnterNameHeader}  4
 
 
 Enter Name
+    [Tags]  Enter a Name
+    Log To Console  First and Last Name Entry
     Wait Until Element is Visible  ${EnterNameHeader}  4
     Click Element  ${FirstNameField}
     Input Text  ${FirstNameField}  Tom
@@ -353,12 +381,16 @@ Enter Name
 
 
 Enter Your Email
+    [Tags]  Email Entry
+    Log To Console  Enter an Email Address
     Wait Until Element is Visible  ${EstimateHeader}  4
     Click Element  ${EmailTextField}
     Input Text  ${EmailTextField}  test@tester.com
     Click Button    ${NextButton}
 
 Enter Mobile Number
+    [Tags]  Mobile Number Entry
+    Log To Console  Enter a Mobile Number
     Wait Until Element is Visible  ${MobileNumberHeader}  4
     Click Element  ${PhoneNumberField}
     Input Text  ${PhoneNumberField}  2122222222
