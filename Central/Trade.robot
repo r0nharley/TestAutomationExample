@@ -86,6 +86,9 @@ ${EmailTextField}  //input[@type='email']
 ${MobileNumberHeader}  //div[@class='_jy6h7s'][contains(.,'Please enter your mobile number')]
 ${PhoneNumberField}  //input[@type='tel']
 ${SubmitBtn}  //button[@type='button'][contains(.,'Submit')]
+${DefaultTimeout}  4
+${IsAddressCorrectCopy}  //div[@class='_25tgwa'][contains(.,'Is this the correct address?')]
+
 
 
 
@@ -94,10 +97,10 @@ ${SubmitBtn}  //button[@type='button'][contains(.,'Submit')]
 TradeInWorkflow
     #Navigate to Page
     #Enter Invalid Address
-    Enter Valid Address
-    Basic Facts
+    Enter Valid Address  3692 Silver Brook Ln, Gainesville, GA
+    Basic Facts   1996  1500
     Does Home Have Any
-    Updates
+    Updates  This is my description
     Need Repairs
     Age of Roof
     Age of Water Heater
@@ -106,15 +109,15 @@ TradeInWorkflow
     Ceilings
     Mail Level Floors
     Buy/Sell
-    Home Worth
-    Currently on the Market
+    Home Worth  350000
+    Currently on the Market  This is my Situation
     Looking to buy
     Have you Found
     Working with another Agent?
     How did you hear
-    Enter Name
-    Enter Your Email
-    Enter Mobile Number
+    Enter Name   Tom   Jones
+    Enter Your Email  tester@test.com
+    Enter Mobile Number  2122222222
 
 
 Navigate to Page
@@ -127,54 +130,64 @@ Navigate to Page
 
 Enter Invalid Address
     [Tags]  Enter Invalid Address
+    [Arguments]  ${Invalid}
+    ${InvalidAddress}=  Set Variable  ${Invalid}
+    ${InValidSearchResult}=  Set Variable   //li[@class='_jx6g50i'][contains(.,'${InvalidAddress}')]
     Log To Console  Entering a Invalid Address
     Click Element  ${EnterAddress}
-    Input Text  ${EnterAddress}  3691 Silver Brook Ln Gainesville, GA
-    Wait Until Element is Visible  //li[@class='_jx6g50i'][contains(.,'3691 Silver Brook Ln, Gainesville, GA')]  4
-    Click Element  //li[@class='_jx6g50i'][contains(.,'3691 Silver Brook Ln, Gainesville, GA')]
+    Input Text  ${EnterAddress}  ${InvalidAddress}
+    Wait Until Element is Visible  ${InValidSearchResult}  ${DefaultTimeout}
+    Click Element  ${InValidSearchResult}
     Capture Page Screenshot
     Wait Until Element is Visible  ${AlreadySubmittedText}  20
 
 
 Enter Valid Address
     [Tags]  Enter Valid Address
+    [Arguments]  ${Valid}
+    ${ValidAddress}=  Set Variable  ${Valid}
+    ${ValidSearchResult}=  Set Variable  //li[@class='_jx6g50i'][contains(.,'${ValidAddress}')]
     Log To Console  Entering a Valid Address
     go to   ${KnockURL}
     sleep  3
     Click Element  ${EnterAddress}
     Click Button   ${GetTradeButton}
-    Wait Until Element is Visible  ${EnterAddress}  5
+    Wait Until Element is Visible  ${EnterAddress}  ${DefaultTimeout}
     Click Element  ${EnterAddress}
-    Input Text  ${EnterAddress}  3692 Silver Brook Ln Gainesville, GA
-    Wait Until Element is Visible  //li[@class='_jx6g50i'][contains(.,'3692 Silver Brook Ln, Gainesville, GA')]  4
-    Click Element  //li[@class='_jx6g50i'][contains(.,'3692 Silver Brook Ln, Gainesville, GA')]
-    Wait Until Element is Visible  //div[@class='_25tgwa'][contains(.,'Is this the correct address?')]  4
+    Input Text  ${EnterAddress}  ${ValidAddress}
+    Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
+    Click Element  ${ValidSearchResult}
+    Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
     Click Button   ${CorrectButton}
-    Wait Until Element is Visible  ${LetsStartCopy}  5
+    Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
     Capture Page Screenshot
 
 
 Basic Facts
     [Tags]  Basic Facts
+    [Arguments]  ${Year}  ${SqFoot}
+    ${YearB}=  Set Variable  ${Year}
+    ${SqFootage}=  Set Variable  ${SqFoot}
     Log To Console  Selecting Basic Facts
     Click Button  ${AddBedrooms}
     Click Button  ${AddFullBathrooms}
     Click Button  ${AddHalfBathrooms}
     Click Element  ${YearBuild}
-    Input Text  ${YearBuild}  1996
+    Input Text  ${YearBuild}  ${YearB}
     Click Element  ${SqFt}
-    Input Text  ${SqFt}  1500
+    Input Text  ${SqFt}  ${YearB}
     Click Element  ${HomeType}
-    Wait Until Element is Visible  ${HomeTypeSingleFam}  4
+    Wait Until Element is Visible  ${HomeTypeSingleFam}  ${DefaultTimeout}
+    Sleep  1
     Click Element  ${HomeTypeSingleFam}
-    Wait Until Element is Visible  ${NextButton}  4
+    Wait Until Element is Visible  ${NextButton}  ${DefaultTimeout}
     Click Button  ${NextButton}
 
 
 Does Home Have Any
     [Tags]  Does Home Have Any Upgrades
     Log To Console  Selecting Upgrade Options
-    Wait Until Element is Visible  ${DoesYourHomeCopy}  4
+    Wait Until Element is Visible  ${DoesYourHomeCopy}  ${DefaultTimeout}
     Click Button    ${PoolButton}
     Click Button    ${GarageButton}
     #Click Button    ${BasementButton}
@@ -189,10 +202,12 @@ Does Home Have Any
 
 Updates
     [Tags]  Does Home Have Any Updates
+    [Arguments]  ${DescribeUpdate}
+    ${Description}=  Set Variable  ${DescribeUpdate}
     Log To Console  Selecting Update Options
     Wait Until Element is Visible  ${UpdatesCopy}
     Click Button   ${NextButton}
-    Wait Until Element is Visible  ${PleaseChooseOneValidationError}  5
+    Wait Until Element is Visible  ${PleaseChooseOneValidationError}  ${DefaultTimeout}
     Click Button    ${KitchenCabinets}
     Click Button    ${KitchenFloor}
     Click Button    ${Flooring}
@@ -202,24 +217,23 @@ Updates
     Click Button    ${InterionPaint}
     Click Button    ${CounterTops}
     Click Button    ${NextButton}
-    Wait Until Element is Visible  ${DescribeUpdatesCopy}  5
+    Wait Until Element is Visible  ${DescribeUpdatesCopy}  ${DefaultTimeout}
     Click Element  ${DescribeUpdatesCopy}
-    Sleep  2
-    Input Text  ${DescribeUpdatesCopy}  This is my description
     Sleep  1
+    Input Text  ${DescribeUpdatesCopy}  ${Description}
     Click Button    ${NextButton}
 
 
 Need Repairs
     [Tags]  Any Repairs or Improvements
-    Log To Console  Repairs or Improvments Selection
-    Wait Until Element is Visible  ${ImprovementsNeededHeader}  4
+    Log To Console  Repairs or Improvements Selection
+    Wait Until Element is Visible  ${ImprovementsNeededHeader}  ${DefaultTimeout}
     Sleep  2
 #   Element should not be Visible  ${RepairRequiredText}
     Click Button    ${NoButton}
-    Wait Until Element is Visible  ${AgeOfRoofHeader}  4
+    Wait Until Element is Visible  ${AgeOfRoofHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
-    Wait Until Element is Visible  ${ImprovementsNeededHeader}  4
+    Wait Until Element is Visible  ${ImprovementsNeededHeader}  ${DefaultTimeout}
     Click Button    ${YesButton}
     Capture Page Screenshot
     Click Button    ${NoButton}
@@ -230,47 +244,47 @@ Need Repairs
 Age of Roof
     [Tags]  Roof Age
     Log To Console  How old is your roof
-    Wait Until Element is Visible  ${AgeOfRoofHeader}  4
+    Wait Until Element is Visible  ${AgeOfRoofHeader}  ${DefaultTimeout}
     Click Button  ${LessThanFiveBTN}
-    Wait Until Element is Visible  ${HotWaterHeaterHeader}  4
+    Wait Until Element is Visible  ${HotWaterHeaterHeader}  ${DefaultTimeout}
 
 Age of Water Heater
     [Tags]  Water Heater Age
     Log To Console  How old is you Water Heater
-    Wait Until Element is Visible  ${HotWaterHeaterHeader}  4
+    Wait Until Element is Visible  ${HotWaterHeaterHeader}  ${DefaultTimeout}
     Click Button  ${FiveNineBTN}
-    Wait Until Element is Visible  ${HVACHeader}  4
+    Wait Until Element is Visible  ${HVACHeader}  ${DefaultTimeout}
 
 
 
 Age of HVAC
     [Tags]  HVAC age
     Log To Console  How old is your HVAC system
-    Wait Until Element is Visible  ${HVACHeader}  4
+    Wait Until Element is Visible  ${HVACHeader}  ${DefaultTimeout}
     Click Button  ${TenMoreBTN}
-    Wait Until Element is Visible  ${KitchenApplianceHeader}  4
+    Wait Until Element is Visible  ${KitchenApplianceHeader}  ${DefaultTimeout}
 
 
 Kitchen Appliances
     [Tags]  Describe Kitchen Appliances
     Log To Console  What kind of Kitchen Appliances
-    Wait Until Element is Visible  ${KitchenApplianceHeader}  4
+    Wait Until Element is Visible  ${KitchenApplianceHeader}  ${DefaultTimeout}
     Click Button  ${StainlessSteel}
-    Wait Until Element is Visible  ${CeilingsHeader}  4
+    Wait Until Element is Visible  ${CeilingsHeader}  ${DefaultTimeout}
 
 
 Ceilings
     [Tags]  Describe Ceilings
     Log To Console  What type of Ceilings
-    Wait Until Element is Visible  ${CeilingsHeader}  4
+    Wait Until Element is Visible  ${CeilingsHeader}  ${DefaultTimeout}
     Click Button  ${PopcornCeilingButton}
-    Wait Until Element is Visible  ${FlooringHeader}  4
+    Wait Until Element is Visible  ${FlooringHeader}  ${DefaultTimeout}
 
 
 Mail Level Floors
     [Tags]  Describe Floors
     Log To Console  What type of Floors
-    Wait Until Element is Visible  ${FlooringHeader}  4
+    Wait Until Element is Visible  ${FlooringHeader}  ${DefaultTimeout}
     Click Button    ${HardWoodBtn}
 #    Click Button    ${HardWoodBtn}
 #    Sleep  2
@@ -281,69 +295,73 @@ Mail Level Floors
     Click Button    ${CarpetBtn}
     Click Button    ${OtherBth}
     Click Button    ${NextButton}
-    Wait Until Element is Visible   ${LookingToSellTimeHeader}  4
+    Wait Until Element is Visible   ${LookingToSellTimeHeader}  ${DefaultTimeout}
 
 
 Buy/Sell
     [Tags]  Buying or Selling
     Log To Console  Are you Buying or Selling
-    Wait Until Element is Visible   ${LookingToSellTimeHeader}  4
+    Wait Until Element is Visible   ${LookingToSellTimeHeader}  ${DefaultTimeout}
     Click Button  ${ASAPBtn}
-    Wait Until Element is Visible   ${HomeWorthHeader}   4
+    Wait Until Element is Visible   ${HomeWorthHeader}   ${DefaultTimeout}
 
 
 Home Worth
     [Tags]  Home Worth
+    [Arguments]  ${Worth}
+    ${HomeWorth}=  Set Variable  ${Worth}
     Log To Console   What is your home worth
-    Wait Until Element is Visible   ${HomeWorthHeader}   4
+    Wait Until Element is Visible   ${HomeWorthHeader}   ${DefaultTimeout}
     Click Element  ${HomeWorthText}
-    Input Text  ${HomeWorthText}  350000
+    Input Text  ${HomeWorthText}  ${HomeWorth}
     Click Button    ${NextButton}
-    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
+    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  ${DefaultTimeout}
 
 
 Currently on the Market
     [Tags]  Home on the Market
+    [Arguments]  ${Situation}
+    ${MSituation}=  Set Variable  ${Situation}
     Log To Console  Is you home currently on the market
-    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
+    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  ${DefaultTimeout}
     Click Button  ${YesButton}
-    Wait Until Element is Visible  ${AgentYesValidationText}  4
+    Wait Until Element is Visible  ${AgentYesValidationText}   ${DefaultTimeout}
     Click Element  ${SituationTextField}
-    Input Text  ${SituationTextField}  This is my situation
-    Wait Until Element is Visible  ${NextButton}  4
+    Input Text  ${SituationTextField}  ${MSituation}
+    Wait Until Element is Visible  ${NextButton}  ${DefaultTimeout}
     Click Button    ${NextButton}
-    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
-    Wait Until Element is Visible  ${AgentYesValidationText}  4
+    Wait Until Element is Visible  ${AgentYesValidationText}  ${DefaultTimeout}
     Click Button  ${BackButton}
-    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  4
+    Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  ${DefaultTimeout}
     Click Button  ${NoButton}
-    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
 
 
 Looking to buy
     [Tags]  Are you looking to buy a home
     Log To Console  Are you looking to buy a home
-    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
     Click Button  ${NoButton}
-    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
-    Wait Until Element is Visible  ${LookingToBuyHeader}  4
+    Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
     Click Button  ${YesButton}
-    Wait Until Element is Visible  ${HaveYouFoundHeader}  4
+    Wait Until Element is Visible  ${HaveYouFoundHeader}  ${DefaultTimeout}
 
 
 
 Have you Found
     [Tags]  Have you found your House
     Log To Console  Have you found a new house
-    Wait Until Element is Visible  ${HaveYouFoundHeader}  4
+    Wait Until Element is Visible  ${HaveYouFoundHeader}  ${DefaultTimeout}
     Click Button  ${YesButton}
-    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  ${DefaultTimeout}
     Click Button  ${BackButton}
-    Wait Until Element is Visible  ${HaveYouFoundHeader}  4
+    Wait Until Element is Visible  ${HaveYouFoundHeader}  ${DefaultTimeout}
     Click Button  ${NoButton}
-    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  ${DefaultTimeout}
     Click Button  ${BackButton}
     Click Button  ${YesButton}
 
@@ -351,49 +369,56 @@ Have you Found
 Working with another Agent?
     [Tags]  Working with another Agent Question
     Log To Console  Are you working with another Agent
-    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  ${DefaultTimeout}
     Click Button  ${YesButton}
-    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
-    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  4
+    Wait Until Element is Visible  ${WorkingWithAnotherAgent}  ${DefaultTimeout}
     Click Button  ${NoButton}
-    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
 
 
 How did you hear
     [Tags]  How did you hear
     Log To Console  How did you hear about Knock
-    Wait Until Element is Visible  ${HowDidYouHearHeader}  4
+    Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
     Click Button   ${TVSegmentBtn}
-    Wait Until Element is Visible  ${EnterNameHeader}  4
+    Wait Until Element is Visible  ${EnterNameHeader}  ${DefaultTimeout}
 
 
 Enter Name
     [Tags]  Enter a Name
+    [Arguments]  ${First}  ${Last}
+    ${FirstName}=  Set Variable  ${First}
+    ${LastName}=  Set Variable   ${Last}
     Log To Console  First and Last Name Entry
-    Wait Until Element is Visible  ${EnterNameHeader}  4
+    Wait Until Element is Visible  ${EnterNameHeader}  ${DefaultTimeout}
     Click Element  ${FirstNameField}
-    Input Text  ${FirstNameField}  Tom
+    Input Text  ${FirstNameField}  ${FirstName}
     Click Element  ${LastNameField}
-    Input Text  ${LastNameField}  Jones
+    Input Text  ${LastNameField}  ${LastName}
     Click Button    ${NextButton}
-    Wait Until Element is Visible  ${EstimateHeader}  4
+    Wait Until Element is Visible  ${EstimateHeader}  ${DefaultTimeout}
 
 
 Enter Your Email
     [Tags]  Email Entry
+    [Arguments]  ${Email}
+    ${EmailAddress}=  Set Variable  ${Email}
     Log To Console  Enter an Email Address
-    Wait Until Element is Visible  ${EstimateHeader}  4
+    Wait Until Element is Visible  ${EstimateHeader}  ${DefaultTimeout}
     Click Element  ${EmailTextField}
-    Input Text  ${EmailTextField}  test@tester.com
+    Input Text  ${EmailTextField}  ${EmailAddress}
     Click Button    ${NextButton}
 
 Enter Mobile Number
     [Tags]  Mobile Number Entry
+    [Arguments]  ${Mobile}
+    ${MobileNumber}=  Set Variable  ${Mobile}
     Log To Console  Enter a Mobile Number
-    Wait Until Element is Visible  ${MobileNumberHeader}  4
+    Wait Until Element is Visible  ${MobileNumberHeader}  ${DefaultTimeout}
     Click Element  ${PhoneNumberField}
-    Input Text  ${PhoneNumberField}  2122222222
+    Input Text  ${PhoneNumberField}  ${MobileNumber}
     Wait Until Element is Visible  ${SubmitBtn}
 
 

@@ -43,3 +43,42 @@ Can't find symbol 'GetGraphicsResetStatus'.
 1547165596075	Marionette	INFO	Listening on port 64325
 1547165596116	Marionette	WARN	TLS certificate errors will be ignored for this session
 1547165603250	Marionette	INFO	Stopped listening on port 64325
+1547259606825	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/r0/ntmf9f85773cl0mzkwy6t6mm0000gn/T/rust_mozprofile.Sa17iEC4zsK0"
+*** You are running in headless mode.
+1547259607208	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1547259607209	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1547259608315	Marionette	INFO	Listening on port 57250
+1547259608390	Marionette	WARN	TLS certificate errors will be ignored for this session
+1547259620278	Marionette	INFO	Stopped listening on port 57250
+1547259627253	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/r0/ntmf9f85773cl0mzkwy6t6mm0000gn/T/rust_mozprofile.ul4dFtAJLdm0"
+*** You are running in headless mode.
+1547259627632	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1547259627632	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1547259628697	Marionette	INFO	Listening on port 57354
+1547259628720	Marionette	WARN	TLS certificate errors will be ignored for this session
+console.error: BroadcastService: 
+  receivedBroadcastMessage: handler for
+  remote-settings/monitor_changes
+  threw error:
+  Message: Error: Polling for changes failed: NetworkError when attempting to fetch resource..
+  Stack:
+    remoteSettingsFunction/remoteSettings.pollChanges@resource://services-settings/remote-settings.js:750:13
+
+1547259663685	Marionette	INFO	Stopped listening on port 57354
+1547396055652	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/r0/ntmf9f85773cl0mzkwy6t6mm0000gn/T/rust_mozprofile.pWSM5IxABkst"
+*** You are running in headless mode.
+1547396056087	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1547396056088	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1547396057299	Marionette	INFO	Listening on port 57106
+1547396057347	Marionette	WARN	TLS certificate errors will be ignored for this session
+1547396070846	Marionette	INFO	Stopped listening on port 57106
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1547396076304	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "-marionette" "-headless" "-foreground" "-no-remote" "-profile" "/var/folders/r0/ntmf9f85773cl0mzkwy6t6mm0000gn/T/rust_mozprofile.HnpdhhersCcP"
+*** You are running in headless mode.
+1547396076765	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: resource://pdf.js/
+1547396076765	addons.webextension.screenshots@mozilla.org	WARN	Loading extension 'screenshots@mozilla.org': Reading manifest: Invalid host permission: about:reader*
+1547396077945	Marionette	INFO	Listening on port 57218
+1547396077983	Marionette	WARN	TLS certificate errors will be ignored for this session
+1547396095024	Marionette	INFO	Stopped listening on port 57218
