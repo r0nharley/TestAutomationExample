@@ -5,89 +5,93 @@ Resource   ${EXECDIR}/Central/Common.robot
 
 *** Variables ***
 
-${KnockURL}      https://www.knock.com/
-${EnterAddress}  //input[@placeholder='Enter your home address']
-${GetTradeButton}  //button[@class='_13u5ve25']
-${AddressVerification}  //div[@class='_11q3op'][contains(.,'Address Verification')]
-${AlreadySubmittedText}  //div[@class='_1gfpcfs'][contains(.,'This home has already been submitted for a Knock Offer.')]
-${CorrectButton}  //button[@type='button'][contains(.,'Correct')]
-${LetsStartCopy}  //div[@class='_jy6h7s'][contains(.,'Let’s start by verifying some basic facts about your home.')]
-${AddBedrooms}  (//button[contains(@class,'_133gcyr1')])[1]
-${AddFullBathrooms}  (//button[contains(@class,'_133gcyr1')])[2]
-${AddHalfBathrooms}  (//button[contains(@class,'_133gcyr1')])[3]
-${YearBuild}    (//input[contains(@type,'tel')])[1]
-${SqFt}         (//input[contains(@type,'tel')])[2]
-${HomeType}     //div[contains(@class,'_t2qorhv')]
-${HomeTypeValue}  //input[contains(@value,'1')]
-${HomeTypeSingleFam}  (//div[contains(.,'Single Family')])[10]
-${NextButton}  //button[@type='button'][contains(.,'Next')]
-${BackButton}   //button[@type='button'][contains(.,'Back')]
-${DoesYourHomeCopy}  //div[@class='_jy6h7s'][contains(.,'Does your home have any of the following? (choose all that apply)')]
-${PoolButton}  //button[@type='button'][contains(.,'Pool')]
-${GarageButton}  //button[@type='button'][contains(.,'Garage')]
-${BasementButton}  //button[@type='button'][contains(.,'Basement')]
-${WaterDamageButton}  //button[@type='button'][contains(.,'Water Damage')]
-${PetIssues}  //button[@type='button'][contains(.,'Pest Issues')]
-${PlumbingIssues}  //button[@type='button'][contains(.,'Plumbing Issues')]
-${DrainageProblem}  //button[@type='button'][contains(.,'Drainage Problem')]
-${FondationIssues}  //button[@type='button'][contains(.,'Foundation Issues')]
-${Addition}  //button[@type='button'][contains(.,'Addition')]
-${UpdatesCopy}  //div[@class='_jy6h7s'][contains(.,'Have you updated any of the following in the past 5 years?')]
-${KitchenCabinets}  //button[@type='button'][contains(.,'Kitchen Cabinets')]
-${KitchenFloor}     //button[@type='button'][contains(.,'Kitchen Floor')]
-${Flooring}         //button[@type='button'][contains(.,'Flooring')]
-${MasterBedroom}    //button[@type='button'][contains(.,'Master Bedroom')]
-${Bathrooms}        //button[@type='button'][contains(.,'Bathroom(s)')]
-${BackyardDeck}     //button[@type='button'][contains(.,'Backyard/Deck')]
-${InterionPaint}    //button[@type='button'][contains(.,'Interior Paint')]
-${ExteriorPaint}    //button[@type='button'][contains(.,'Exterior Paint')]
-${CounterTops}      //button[@type='button'][contains(.,'Countertops')]
-${PleaseChooseOneValidationError}  //div[@class='_10vebdl'][contains(.,'Please choose at least one option or select "None of the above".')]
-${DescribeUpdatesCopy}  //textarea[contains(@placeholder,'Please describe the updates and when they were made.')]
-${ImprovementsNeededHeader}  //div[@class='_1fgvx67'][contains(.,'that need to be made to your home?')]
-${NoButton}  //button[@type='button'][contains(.,'No')]
-${YesButton}  //button[@type='button'][contains(.,'Yes')]
-${RepairRequiredText}  //textarea[contains(@placeholder,'Please describe what's needed.')]
-${AgeOfRoofHeader}  //div[@class='_jy6h7s'][contains(.,'What is the age of your roof?')]
-${LessThanFiveBTN}  //button[@type='button'][contains(.,'Less Than 5 Years')]
-${FiveNineBTN}  //button[@type='button'][contains(.,'5-9 Years')]
-${TenMoreBTN}   //button[@type='button'][contains(.,'10+ Years')]
-${HotWaterHeaterHeader}  //div[@class='_jy6h7s'][contains(.,'What is the age of your hot water heater?')]
-${HVACHeader}  //div[@class='_jy6h7s'][contains(.,'What is the age of your HVAC system(s)?')]
-${KitchenApplianceHeader}  //div[@class='_jy6h7s'][contains(.,'What type of kitchen appliances do you have?')]
-${StainlessSteel}   //button[@type='button'][contains(.,'Stainless Steel')]
-${CeilingsHeader}   //div[@class='_jy6h7s'][contains(.,'What type of ceilings do you have?')]
-${PopcornCeilingButton}  //button[@type='button'][contains(.,'Popcorn')]
-${FlooringHeader}  //div[@class='_jy6h7s'][contains(.,'What type of flooring do you have on the main level?')]
-${HardWoodBtn}  //button[@type='button'][contains(.,'Hardwood')]
-${TileBtn}   //button[@type='button'][contains(.,'Tile')]
-${LaminatedBtn}   //button[@type='button'][contains(.,'Laminated')]
-${CarpetBtn}   //button[@type='button'][contains(.,'Carpet')]
-${OtherBth}   //button[@type='button'][contains(.,'Other')]
-${RequiredValidationText}  //div[@class='_10vebdl'][contains(.,'Required')]
-${LookingToSellTimeHeader}  //div[@class='_jy6h7s'][contains(.,'When are you looking to buy/sell?')]
-${ASAPBtn}  //button[@type='button'][contains(.,'ASAP')]
-${HomeWorthHeader}  //div[@class='_jy6h7s'][contains(.,'How much do you think your home is worth?')]
-${HomeWorthText}  //input[contains(@type,'tel')]
-${CurrentlyOnMarketHeader}  //div[@class='_jy6h7s'][contains(.,'Is your home currently on the market?')]
-${AgentYesValidationText}   //div[@class='_20skg4'][contains(.,'Knock is not able to work with sellers that are currently represented by an agent. We are happy to discuss taking over the listing when it expires. If you can fill us in on your situation, we can decide the best course of action.')]
-${LookingToBuyHeader}  //div[@class='_jy6h7s'][contains(.,'Are you currently looking to buy a home?')]
-${HowDidYouHearHeader}  //div[@class='_jy6h7s'][contains(.,'How did you hear about Knock?')]
-${SituationTextField}   //textarea[contains(@placeholder,'Tell us about your situation')]
-${HaveYouFoundHeader}  //div[@class='_jy6h7s'][contains(.,'Have you found the home you want to buy?')]
-${WorkingWithAnotherAgent}  //div[@class='_jy6h7s'][contains(.,'Are you working with another agent to buy your next home?')]
-${HowDidYouHearHeader}  //div[@class='_jy6h7s'][contains(.,'How did you hear about Knock?')]
-${TVSegmentBtn}  //button[@type='button'][contains(.,'TV Segment')]
-${EnterNameHeader}  //div[@class='_jy6h7s'][contains(.,'Please enter your name')]
-${FirstNameField}  //input[contains(@placeholder,'Your First Name')]
-${LastNameField}    //input[contains(@placeholder,'Your Last Name')]
-${EstimateHeader}  //div[@class='_jy6h7s'][contains(.,'Where should we send your Knock Price Estimate?')]
-${EmailTextField}  //input[@type='email']
-${MobileNumberHeader}  //div[@class='_jy6h7s'][contains(.,'Please enter your mobile number')]
-${PhoneNumberField}  //input[@type='tel']
-${SubmitBtn}  //button[@type='button'][contains(.,'Submit')]
-${DefaultTimeout}  4
-${IsAddressCorrectCopy}  //div[@class='_25tgwa'][contains(.,'Is this the correct address?')]
+${KnockURL}                         https://www.knock.com/
+${EnterAddress}                     //input[@placeholder='Enter your home address']
+${GetTradeButton}                   //button[@class='_13u5ve25']
+${AddressVerification}              //div[@class='_11q3op'][contains(.,'Address Verification')]
+${AlreadySubmittedText}             //div[@class='_1gfpcfs'][contains(.,'This home has already been submitted for a Knock Offer.')]
+${CorrectButton}                    //button[@type='button'][contains(.,'Correct')]
+${LetsStartCopy}                    //div[@class='_jy6h7s'][contains(.,'Let’s start by verifying some basic facts about your home.')]
+${AddBedrooms}                      (//button[contains(@class,'_133gcyr1')])[1]
+${AddFullBathrooms}                 (//button[contains(@class,'_133gcyr1')])[2]
+${AddHalfBathrooms}                 (//button[contains(@class,'_133gcyr1')])[3]
+${YearBuild}                        (//input[contains(@type,'tel')])[1]
+${SqFt}                             (//input[contains(@type,'tel')])[2]
+${HomeType}                         //div[contains(@class,'_t2qorhv')]
+${HomeTypeValue}                    //input[contains(@value,'1')]
+${HomeTypeSingleFam}                (//div[contains(.,'Single Family')])[10]
+${NextButton}                       //button[@type='button'][contains(.,'Next')]
+${BackButton}                       //button[@type='button'][contains(.,'Back')]
+${DoesYourHomeCopy}                 //div[@class='_jy6h7s'][contains(.,'Does your home have any of the following? (choose all that apply)')]
+${PoolButton}                       //button[@type='button'][contains(.,'Pool')]
+${GarageButton}                     //button[@type='button'][contains(.,'Garage')]
+${BasementButton}                   //button[@type='button'][contains(.,'Basement')]
+${WaterDamageButton}                //button[@type='button'][contains(.,'Water Damage')]
+${PetIssues}                        //button[@type='button'][contains(.,'Pest Issues')]
+${PlumbingIssues}                   //button[@type='button'][contains(.,'Plumbing Issues')]
+${DrainageProblem}                  //button[@type='button'][contains(.,'Drainage Problem')]
+${FondationIssues}                  //button[@type='button'][contains(.,'Foundation Issues')]
+${Addition}                         //button[@type='button'][contains(.,'Addition')]
+${UpdatesCopy}                      //div[@class='_jy6h7s'][contains(.,'Have you updated any of the following in the past 5 years?')]
+${KitchenCabinets}                  //button[@type='button'][contains(.,'Kitchen Cabinets')]
+${KitchenFloor}                     //button[@type='button'][contains(.,'Kitchen Floor')]
+${Flooring}                         //button[@type='button'][contains(.,'Flooring')]
+${MasterBedroom}                    //button[@type='button'][contains(.,'Master Bedroom')]
+${Bathrooms}                        //button[@type='button'][contains(.,'Bathroom(s)')]
+${BackyardDeck}                     //button[@type='button'][contains(.,'Backyard/Deck')]
+${InterionPaint}                    //button[@type='button'][contains(.,'Interior Paint')]
+${ExteriorPaint}                    //button[@type='button'][contains(.,'Exterior Paint')]
+${CounterTops}                      //button[@type='button'][contains(.,'Countertops')]
+${PleaseChooseOneValidationError}   //div[@class='_10vebdl'][contains(.,'Please choose at least one option or select "None of the above".')]
+${DescribeUpdatesCopy}              //textarea[contains(@placeholder,'Please describe the updates and when they were made.')]
+${ImprovementsNeededHeader}         //div[@class='_1fgvx67'][contains(.,'that need to be made to your home?')]
+${NoButton}                         //button[@type='button'][contains(.,'No')]
+${YesButton}                        //button[@type='button'][contains(.,'Yes')]
+${RepairRequiredText}               //textarea[contains(@placeholder,'Please describe what's needed.')]
+${AgeOfRoofHeader}                  //div[@class='_jy6h7s'][contains(.,'What is the age of your roof?')]
+${LessThanFiveBTN}                  //button[@type='button'][contains(.,'Less Than 5 Years')]
+${FiveNineBTN}                      //button[@type='button'][contains(.,'5-9 Years')]
+${TenMoreBTN}                       //button[@type='button'][contains(.,'10+ Years')]
+${HotWaterHeaterHeader}             //div[@class='_jy6h7s'][contains(.,'What is the age of your hot water heater?')]
+${HVACHeader}                       //div[@class='_jy6h7s'][contains(.,'What is the age of your HVAC system(s)?')]
+${KitchenApplianceHeader}           //div[@class='_jy6h7s'][contains(.,'What type of kitchen appliances do you have?')]
+${StainlessSteel}                   //button[@type='button'][contains(.,'Stainless Steel')]
+${CeilingsHeader}                   //div[@class='_jy6h7s'][contains(.,'What type of ceilings do you have?')]
+${PopcornCeilingButton}             //button[@type='button'][contains(.,'Popcorn')]
+${FlooringHeader}                   //div[@class='_jy6h7s'][contains(.,'What type of flooring do you have on the main level?')]
+${HardWoodBtn}                      //button[@type='button'][contains(.,'Hardwood')]
+${TileBtn}                          //button[@type='button'][contains(.,'Tile')]
+${LaminatedBtn}                     //button[@type='button'][contains(.,'Laminated')]
+${CarpetBtn}                        //button[@type='button'][contains(.,'Carpet')]
+${OtherBth}                         //button[@type='button'][contains(.,'Other')]
+${RequiredValidationText}           //div[@class='_10vebdl'][contains(.,'Required')]
+${LookingToSellTimeHeader}          //div[@class='_jy6h7s'][contains(.,'When are you looking to buy/sell?')]
+${ASAPBtn}                          //button[@type='button'][contains(.,'ASAP')]
+${HomeWorthHeader}                  //div[@class='_jy6h7s'][contains(.,'How much do you think your home is worth?')]
+${HomeWorthText}                    //input[contains(@type,'tel')]
+${CurrentlyOnMarketHeader}          //div[@class='_jy6h7s'][contains(.,'Is your home currently on the market?')]
+${AgentYesValidationText}           //div[@class='_20skg4'][contains(.,'Knock is not able to work with sellers that are currently represented by an agent. We are happy to discuss taking over the listing when it expires. If you can fill us in on your situation, we can decide the best course of action.')]
+${LookingToBuyHeader}               //div[@class='_jy6h7s'][contains(.,'Are you currently looking to buy a home?')]
+${HowDidYouHearHeader}              //div[@class='_jy6h7s'][contains(.,'How did you hear about Knock?')]
+${SituationTextField}               //textarea[contains(@placeholder,'Tell us about your situation')]
+${HaveYouFoundHeader}               //div[@class='_jy6h7s'][contains(.,'Have you found the home you want to buy?')]
+${WorkingWithAnotherAgent}          //div[@class='_jy6h7s'][contains(.,'Are you working with another agent to buy your next home?')]
+${HowDidYouHearHeader}              //div[@class='_jy6h7s'][contains(.,'How did you hear about Knock?')]
+${TVSegmentBtn}                     //button[@type='button'][contains(.,'TV Segment')]
+${EnterNameHeader}                  //div[@class='_jy6h7s'][contains(.,'Please enter your name')]
+${FirstNameField}                   //input[contains(@placeholder,'Your First Name')]
+${LastNameField}                    //input[contains(@placeholder,'Your Last Name')]
+${EstimateHeader}                   //div[@class='_jy6h7s'][contains(.,'Where should we send your Knock Price Estimate?')]
+${EmailTextField}                   //input[@type='email']
+${MobileNumberHeader}               //div[@class='_jy6h7s'][contains(.,'Please enter your mobile number')]
+${PhoneNumberField}                 //input[@type='tel']
+${SubmitBtn}                        //button[@type='button'][contains(.,'Submit')]
+${DefaultTimeout}                   4
+${IsAddressCorrectCopy}             //div[@class='_25tgwa'][contains(.,'Is this the correct address?')]
+${BasementTypeHeader}               //div[@class='_jy6h7s'][contains(.,'What type of basement does your home have?')]
+${FullyFinishedButton}              //button[@type='button'][contains(.,'Fully Finished')]
+${AdditionTypeHeader}               //div[@class='_jy6h7s'][contains(.,'What type of addition do you have? (choose all that apply)')]
+${PermittedAdditionButton}          //button[@type='button'][contains(.,'Permitted')]
 
 
 
@@ -95,10 +99,10 @@ ${IsAddressCorrectCopy}  //div[@class='_25tgwa'][contains(.,'Is this the correct
 *** Keywords ***
 
 TradeInWorkflow
-    #Navigate to Page
-    #Enter Invalid Address
+    Navigate to Page
+    Enter Invalid Address  3691 Silver Brook Ln, Gainesville, GA
     Enter Valid Address  3692 Silver Brook Ln, Gainesville, GA
-    Basic Facts   1996  1500
+    Basic Facts  1996  1500
     Does Home Have Any
     Updates  This is my description
     Need Repairs
@@ -115,7 +119,7 @@ TradeInWorkflow
     Have you Found
     Working with another Agent?
     How did you hear
-    Enter Name   Tom   Jones
+    Enter Name   Tom  Jones
     Enter Your Email  tester@test.com
     Enter Mobile Number  2122222222
 
@@ -127,6 +131,7 @@ Navigate to Page
     Delete All Cookies
     maximize browser window
     Capture Page Screenshot
+
 
 Enter Invalid Address
     [Tags]  Enter Invalid Address
@@ -148,17 +153,17 @@ Enter Valid Address
     ${ValidAddress}=  Set Variable  ${Valid}
     ${ValidSearchResult}=  Set Variable  //li[@class='_jx6g50i'][contains(.,'${ValidAddress}')]
     Log To Console  Entering a Valid Address
-    go to   ${KnockURL}
+    go to  ${KnockURL}
     sleep  3
     Click Element  ${EnterAddress}
-    Click Button   ${GetTradeButton}
+    Click Button  ${GetTradeButton}
     Wait Until Element is Visible  ${EnterAddress}  ${DefaultTimeout}
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${ValidAddress}
     Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
     Click Element  ${ValidSearchResult}
     Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
-    Click Button   ${CorrectButton}
+    Click Button  ${CorrectButton}
     Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
     Capture Page Screenshot
 
@@ -188,16 +193,21 @@ Does Home Have Any
     [Tags]  Does Home Have Any Upgrades
     Log To Console  Selecting Upgrade Options
     Wait Until Element is Visible  ${DoesYourHomeCopy}  ${DefaultTimeout}
-    Click Button    ${PoolButton}
-    Click Button    ${GarageButton}
-    #Click Button    ${BasementButton}
-    Click Button    ${WaterDamageButton}
-    Click Button    ${PetIssues}
-    Click Button    ${PlumbingIssues}
-    Click Button    ${DrainageProblem}
-    Click Button    ${FondationIssues}
-    #Click Button    ${Addition}
-    Click Button    ${NextButton}
+    Click Button  ${PoolButton}
+    Click Button  ${GarageButton}
+    Click Button  ${BasementButton}
+    Click Button  ${WaterDamageButton}
+    Click Button  ${PetIssues}
+    Click Button  ${PlumbingIssues}
+    Click Button  ${DrainageProblem}
+    Click Button  ${FondationIssues}
+    Click Button  ${Addition}
+    Click Button  ${NextButton}
+    Wait Until Element is Visible   ${BasementTypeHeader}  ${DefaultTimeout}
+    Click Button  ${FullyFinishedButton}
+    Wait Until Element is Visible  ${AdditionTypeHeader}  ${DefaultTimeout}
+    Click Button  ${PermittedAdditionButton}
+    Click Button  ${NextButton}
 
 
 Updates
@@ -208,20 +218,20 @@ Updates
     Wait Until Element is Visible  ${UpdatesCopy}
     Click Button   ${NextButton}
     Wait Until Element is Visible  ${PleaseChooseOneValidationError}  ${DefaultTimeout}
-    Click Button    ${KitchenCabinets}
-    Click Button    ${KitchenFloor}
-    Click Button    ${Flooring}
-    Click Button    ${MasterBedroom}
-    Click Button    ${Bathrooms}
-    Click Button    ${BackyardDeck}
-    Click Button    ${InterionPaint}
-    Click Button    ${CounterTops}
-    Click Button    ${NextButton}
+    Click Button  ${KitchenCabinets}
+    Click Button  ${KitchenFloor}
+    Click Button  ${Flooring}
+    Click Button  ${MasterBedroom}
+    Click Button  ${Bathrooms}
+    Click Button  ${BackyardDeck}
+    Click Button  ${InterionPaint}
+    Click Button  ${CounterTops}
+    Click Button  ${NextButton}
     Wait Until Element is Visible  ${DescribeUpdatesCopy}  ${DefaultTimeout}
     Click Element  ${DescribeUpdatesCopy}
     Sleep  1
     Input Text  ${DescribeUpdatesCopy}  ${Description}
-    Click Button    ${NextButton}
+    Click Button  ${NextButton}
 
 
 Need Repairs
@@ -229,17 +239,14 @@ Need Repairs
     Log To Console  Repairs or Improvements Selection
     Wait Until Element is Visible  ${ImprovementsNeededHeader}  ${DefaultTimeout}
     Sleep  2
-#   Element should not be Visible  ${RepairRequiredText}
-    Click Button    ${NoButton}
+    Click Button  ${NoButton}
     Wait Until Element is Visible  ${AgeOfRoofHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
     Wait Until Element is Visible  ${ImprovementsNeededHeader}  ${DefaultTimeout}
-    Click Button    ${YesButton}
+    Click Button  ${YesButton}
     Capture Page Screenshot
-    Click Button    ${NoButton}
-#    Sleep  2
-#    Click Element  ${RepairRequiredText}
-#    Input Text  ${ImprovementsNeededHeader}  These are my repairs
+    Click Button  ${NoButton}
+
 
 Age of Roof
     [Tags]  Roof Age
@@ -248,13 +255,13 @@ Age of Roof
     Click Button  ${LessThanFiveBTN}
     Wait Until Element is Visible  ${HotWaterHeaterHeader}  ${DefaultTimeout}
 
+
 Age of Water Heater
     [Tags]  Water Heater Age
     Log To Console  How old is you Water Heater
     Wait Until Element is Visible  ${HotWaterHeaterHeader}  ${DefaultTimeout}
     Click Button  ${FiveNineBTN}
     Wait Until Element is Visible  ${HVACHeader}  ${DefaultTimeout}
-
 
 
 Age of HVAC
@@ -285,25 +292,21 @@ Mail Level Floors
     [Tags]  Describe Floors
     Log To Console  What type of Floors
     Wait Until Element is Visible  ${FlooringHeader}  ${DefaultTimeout}
-    Click Button    ${HardWoodBtn}
-#    Click Button    ${HardWoodBtn}
-#    Sleep  2
-#    Wait Until Element is Visible  ${RequiredValidationText}  4
-#    Click Button    ${HardWoodBtn}
-    Click Button    ${TileBtn}
-    Click Button    ${LaminatedBtn}
-    Click Button    ${CarpetBtn}
-    Click Button    ${OtherBth}
-    Click Button    ${NextButton}
+    Click Button  ${HardWoodBtn}
+    Click Button  ${TileBtn}
+    Click Button  ${LaminatedBtn}
+    Click Button  ${CarpetBtn}
+    Click Button  ${OtherBth}
+    Click Button  ${NextButton}
     Wait Until Element is Visible   ${LookingToSellTimeHeader}  ${DefaultTimeout}
 
 
 Buy/Sell
     [Tags]  Buying or Selling
     Log To Console  Are you Buying or Selling
-    Wait Until Element is Visible   ${LookingToSellTimeHeader}  ${DefaultTimeout}
+    Wait Until Element is Visible  ${LookingToSellTimeHeader}  ${DefaultTimeout}
     Click Button  ${ASAPBtn}
-    Wait Until Element is Visible   ${HomeWorthHeader}   ${DefaultTimeout}
+    Wait Until Element is Visible  ${HomeWorthHeader}   ${DefaultTimeout}
 
 
 Home Worth
@@ -311,10 +314,10 @@ Home Worth
     [Arguments]  ${Worth}
     ${HomeWorth}=  Set Variable  ${Worth}
     Log To Console   What is your home worth
-    Wait Until Element is Visible   ${HomeWorthHeader}   ${DefaultTimeout}
+    Wait Until Element is Visible  ${HomeWorthHeader}   ${DefaultTimeout}
     Click Element  ${HomeWorthText}
     Input Text  ${HomeWorthText}  ${HomeWorth}
-    Click Button    ${NextButton}
+    Click Button  ${NextButton}
     Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  ${DefaultTimeout}
 
 
@@ -329,7 +332,7 @@ Currently on the Market
     Click Element  ${SituationTextField}
     Input Text  ${SituationTextField}  ${MSituation}
     Wait Until Element is Visible  ${NextButton}  ${DefaultTimeout}
-    Click Button    ${NextButton}
+    Click Button  ${NextButton}
     Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
     Wait Until Element is Visible  ${AgentYesValidationText}  ${DefaultTimeout}
@@ -349,7 +352,6 @@ Looking to buy
     Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${HaveYouFoundHeader}  ${DefaultTimeout}
-
 
 
 Have you Found
@@ -397,7 +399,7 @@ Enter Name
     Input Text  ${FirstNameField}  ${FirstName}
     Click Element  ${LastNameField}
     Input Text  ${LastNameField}  ${LastName}
-    Click Button    ${NextButton}
+    Click Button  ${NextButton}
     Wait Until Element is Visible  ${EstimateHeader}  ${DefaultTimeout}
 
 
@@ -409,7 +411,8 @@ Enter Your Email
     Wait Until Element is Visible  ${EstimateHeader}  ${DefaultTimeout}
     Click Element  ${EmailTextField}
     Input Text  ${EmailTextField}  ${EmailAddress}
-    Click Button    ${NextButton}
+    Click Button  ${NextButton}
+
 
 Enter Mobile Number
     [Tags]  Mobile Number Entry
