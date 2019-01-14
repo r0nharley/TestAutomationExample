@@ -1,7 +1,7 @@
 
-# Trade-in workflow automation expample
+# Trade-in workflow automation example
 
-Test Automation with Robotframework Proof of Concept.  This script runs through the Knock Trade-In Workflow 
+Test Automation with Robot Framework Proof of Concept.  This script runs through the Knock Trade-In Workflow 
 
 ## Getting Started
 
@@ -9,44 +9,66 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Python
-RobotFramework
-Selenium Library
-Headless Chrome
-Headless Firefox
-PhantomJS
 
-```
-Give examples
-```
+RobotFramework<br>
+Selenium Library<br>
+Headless Chrome<br>
+Headless Firefox<br>
+PhantomJS<br>
+
+
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+How to get a development env running locally
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
+Install Robot Framework
 
 ```
-until finished
+pip install robotframework
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Install the Selenium Library for Robot Framework
+
+```
+pip install --upgrade robotframework-seleniumlibrary
+```
+
+
+Install the Chromedriver and add it to Path
+
+```
+brew install chromedriver
+```
+
+
+Install Headless Firefox and add to Path
+
+```
+https://github.com/mozilla/geckodriver/releases/tag/v0.23.0
+```
+
+Install PhantomJS and add to Path (Please Note: PhantomJS is no longer being maintained)
+
+```
+http://phantomjs.org/download.html
+```
 
 ## Running the tests
 
+Test will run with Headless Firefox by default. This can be changed in the `${BROWSER}` variable in the  `Launch.robot` file
+
+```
 robot -d results  Central/Launch.robot
+```
+### Viewing Test Report and Log
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+The Robot Framework test results can be found in the results directory
 
 ```
-Give an example
+results/log.html
 ```
 
+```
+results/results.html
+```
