@@ -130,7 +130,7 @@ Navigate to Page
     go to   ${KnockURL}
     Delete All Cookies
     maximize browser window
-    Capture Page Screenshot
+    AppiumLibrary.Capture Page Screenshot
 
 
 Enter Invalid Address
@@ -143,7 +143,7 @@ Enter Invalid Address
     Input Text  ${EnterAddress}  ${InvalidAddress}
     Wait Until Element is Visible  ${InValidSearchResult}  ${DefaultTimeout}
     Click Element  ${InValidSearchResult}
-    Capture Page Screenshot
+    AppiumLibrary.Capture Page Screenshot
     Wait Until Element is Visible  ${AlreadySubmittedText}  20
 
 
@@ -165,7 +165,8 @@ Enter Valid Address
     Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
     Click Button  ${CorrectButton}
     Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
-    Capture Page Screenshot
+    AppiumLibrary.Capture Page Screenshot
+
 
 
 Basic Facts
@@ -244,7 +245,7 @@ Need Repairs
     Click Button  ${BackButton}
     Wait Until Element is Visible  ${ImprovementsNeededHeader}  ${DefaultTimeout}
     Click Button  ${YesButton}
-    Capture Page Screenshot
+    AppiumLibrary.Capture Page Screenshot
     Click Button  ${NoButton}
 
 
