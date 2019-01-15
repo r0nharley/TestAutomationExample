@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Central/Trade.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2444">
-              <caret line="110" selection-start-line="110" selection-end-line="112" selection-end-column="59" />
+            <state relative-caret-position="447">
+              <caret line="464" selection-start-line="464" selection-end-line="464" />
               <folding>
                 <element signature="e#0#85#0" expanded="true" />
               </folding>
@@ -144,7 +144,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41041000" />
+    <option name="totallyTimeSpent" value="41391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1971" y="92" width="1387" height="1011" extended-state="0" />
@@ -214,8 +214,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Central/Trade.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2444">
-          <caret line="110" selection-start-line="110" selection-end-line="112" selection-end-column="59" />
+        <state relative-caret-position="447">
+          <caret line="464" selection-start-line="464" selection-end-line="464" />
           <folding>
             <element signature="e#0#85#0" expanded="true" />
           </folding>
