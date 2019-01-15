@@ -92,8 +92,11 @@ ${BasementTypeHeader}               //div[@class='_jy6h7s'][contains(.,'What typ
 ${FullyFinishedButton}              //button[@type='button'][contains(.,'Fully Finished')]
 ${AdditionTypeHeader}               //div[@class='_jy6h7s'][contains(.,'What type of addition do you have? (choose all that apply)')]
 ${PermittedAdditionButton}          //button[@type='button'][contains(.,'Permitted')]
-
-
+${FixAddressButton}                 //a[@class='_12wqpluh'][contains(.,'Add Unit # or Fix Address')]
+${AddressFixHeader}                 //div[@class='_jy6h7s'][contains(.,'What is your address?')]
+${AddressCorrectionField}           //input[contains(@placeholder,'Street Address')]
+${AddressCorrection}                3695 Silver Brook Ln, Gainesville, GA
+${NotAvailableHeader}               //h1[@class='_7pkvrf'][contains(.,'Get Notified When Knock Expands')]
 
 
 *** Keywords ***
@@ -101,6 +104,7 @@ ${PermittedAdditionButton}          //button[@type='button'][contains(.,'Permitt
 TradeInWorkflow
     Navigate to Page
     Enter Invalid Address  3691 Silver Brook Ln, Gainesville, GA
+    Expand Notification  1455 Biscayne Boulevard, Miami, FL
     Enter Valid Address  3692 Silver Brook Ln, Gainesville, GA
     Basic Facts  1996  1500
     Does Home Have Any
@@ -147,6 +151,22 @@ Enter Invalid Address
     Wait Until Element is Visible  ${AlreadySubmittedText}  20
 
 
+Expand Notification
+    [Tags]  Not Operating in your Area
+    [Arguments]  ${NotAvailable}
+    ${NotAvailableAddress}=  Set Variable  ${NotAvailable}
+    ${NotAvailableSearch}=  Set Variable  //li[@class='_jx6g50i'][contains(.,'${NotAvailableAddress}')]
+    Log To Console  Enter an Address thats not covered
+    go to  ${KnockURL}
+    sleep  2
+    Click Element  ${EnterAddress}
+    Input Text  ${EnterAddress}  ${NotAvailableAddress}
+    Wait Until Element is Visible  ${NotAvailableSearch}  ${DefaultTimeout}
+    Click Element  ${NotAvailableSearch}
+    Capture Page Screenshot
+    Wait Until Element is Visible  ${NotAvailableHeader}  20
+
+
 Enter Valid Address
     [Tags]  Enter Valid Address
     [Arguments]  ${Valid}
@@ -154,7 +174,7 @@ Enter Valid Address
     ${ValidSearchResult}=  Set Variable  //li[@class='_jx6g50i'][contains(.,'${ValidAddress}')]
     Log To Console  Entering a Valid Address
     go to  ${KnockURL}
-    sleep  3
+    sleep  2
     Click Element  ${EnterAddress}
     Click Button  ${GetTradeButton}
     Wait Until Element is Visible  ${EnterAddress}  ${DefaultTimeout}
@@ -162,6 +182,10 @@ Enter Valid Address
     Input Text  ${EnterAddress}  ${ValidAddress}
     Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
     Click Element  ${ValidSearchResult}
+    Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    Click Element  ${FixAddressButton}
+    Wait Until Element is Visible  ${AddressFixHeader}  ${DefaultTimeout}
+    Click Button  ${NextButton}
     Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
     Click Button  ${CorrectButton}
     Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
