@@ -101,9 +101,30 @@ ${UpdatesButtonCount}               12
 ${GeneralButton}                    //button[@type='button']
 ${DoesHomeButtonCount}              12
 ${MLFoorsButtonCount}               7
-
-
-
+${0%Progress}                       //div[contains(@class,'kstpkq')]
+${8%Progress}                       //div[contains(@style,'width: 8%;')]
+${12%Progress}                      //div[contains(@style,'width: 12%;')]
+${16%Progress}                      //div[contains(@style,'width: 16%;')]
+${20%Progress}                      //div[contains(@style,'width: 20%;')]
+${24%Progress}                      //div[contains(@style,'width: 24%;')]
+${28%Progress}                      //div[contains(@style,'width: 28%;')]
+${32%Progress}                      //div[contains(@style,'width: 32%;')]
+${36%Progress}                      //div[contains(@style,'width: 36%;')]
+${40%Progress}                      //div[contains(@style,'width: 40%;')]
+${44%Progress}                      //div[contains(@style,'width: 44%;')]
+${48%Progress}                      //div[contains(@style,'width: 48%;')]
+${52%Progress}                      //div[contains(@style,'width: 52%;')]
+${56%Progress}                      //div[contains(@style,'width: 56%;')]
+${60%Progress}                      //div[contains(@style,'width: 60%;')]
+${64%Progress}                      //div[contains(@style,'width: 64%;')]
+${68%Progress}                      //div[contains(@style,'width: 68%;')]
+${72%Progress}                      //div[contains(@style,'width: 72%;')]
+${76%Progress}                      //div[contains(@style,'width: 76%;')]
+${80%Progress}                      //div[contains(@style,'width: 80%;')]
+${84%Progress}                      //div[contains(@style,'width: 84%;')]
+${92%Progress}                      //div[contains(@style,'width: 92%;')]
+${96%Progress}                      //div[contains(@style,'width: 96%;')]
+${100%Progress}                     //div[contains(@style,'width: 100%;')]
 
 *** Keywords ***
 
@@ -205,6 +226,7 @@ Basic Facts
     ${YearB}=  Set Variable  ${Year}
     ${SqFootage}=  Set Variable  ${SqFoot}
     Log To Console  Selecting Basic Facts
+    Element Should Be Visible  ${8%Progress}
     Click Button  ${AddBedrooms}
     Click Button  ${AddFullBathrooms}
     Click Button  ${AddHalfBathrooms}
@@ -226,6 +248,7 @@ Does Home Have Any
     Wait Until Element is Visible  ${DoesYourHomeCopy}  ${DefaultTimeout}
     ${NewDoesHomeButtonCount}=  Get Element Count  ${GeneralButton}
     Should Be Equal As Numbers  ${NewDoesHomeButtonCount}  ${DoesHomeButtonCount}
+    Element Should Be Visible  ${12%Progress}
     Click Button  ${PoolButton}
     Click Button  ${GarageButton}
     Click Button  ${BasementButton}
@@ -237,8 +260,10 @@ Does Home Have Any
     Click Button  ${Addition}
     Click Button  ${NextButton}
     Wait Until Element is Visible   ${BasementTypeHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${16%Progress}
     Click Button  ${FullyFinishedButton}
     Wait Until Element is Visible  ${AdditionTypeHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${20%Progress}
     Click Button  ${PermittedAdditionButton}
     Click Button  ${NextButton}
 
@@ -249,7 +274,8 @@ Updates
     ${Description}=  Set Variable  ${DescribeUpdate}
     ${NewUpdatesButtonCount}=  Get Element Count  ${GeneralButton}
     Log To Console  Selecting Update Options
-    Wait Until Element is Visible  ${UpdatesCopy}
+    Wait Until Element is Visible  ${UpdatesCopy}  ${DefaultTimeout}
+    Element Should Be Visible  ${24%Progress}
     Should Be Equal As Numbers  ${NewUpdatesButtonCount}  ${UpdatesButtonCount}
     Click Button   ${NextButton}
     Wait Until Element is Visible  ${PleaseChooseOneValidationError}  ${DefaultTimeout}
@@ -273,7 +299,8 @@ Need Repairs
     [Tags]  Any Repairs or Improvements
     Log To Console  Repairs or Improvements Selection
     Wait Until Element is Visible  ${ImprovementsNeededHeader}  ${DefaultTimeout}
-    Sleep  2
+    Sleep  1
+    Element Should Be Visible  ${28%Progress}
     Click Button  ${NoButton}
     Wait Until Element is Visible  ${AgeOfRoofHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
@@ -287,6 +314,7 @@ Age of Roof
     [Tags]  Roof Age
     Log To Console  How old is your roof
     Wait Until Element is Visible  ${AgeOfRoofHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${32%Progress}
     Click Button  ${LessThanFiveBTN}
     Wait Until Element is Visible  ${HotWaterHeaterHeader}  ${DefaultTimeout}
 
@@ -295,6 +323,7 @@ Age of Water Heater
     [Tags]  Water Heater Age
     Log To Console  How old is you Water Heater
     Wait Until Element is Visible  ${HotWaterHeaterHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${36%Progress}
     Click Button  ${FiveNineBTN}
     Wait Until Element is Visible  ${HVACHeader}  ${DefaultTimeout}
 
@@ -303,6 +332,7 @@ Age of HVAC
     [Tags]  HVAC age
     Log To Console  How old is your HVAC system
     Wait Until Element is Visible  ${HVACHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${40%Progress}
     Click Button  ${TenMoreBTN}
     Wait Until Element is Visible  ${KitchenApplianceHeader}  ${DefaultTimeout}
 
@@ -311,6 +341,7 @@ Kitchen Appliances
     [Tags]  Describe Kitchen Appliances
     Log To Console  What kind of Kitchen Appliances
     Wait Until Element is Visible  ${KitchenApplianceHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${44%Progress}
     Click Button  ${StainlessSteel}
     Wait Until Element is Visible  ${CeilingsHeader}  ${DefaultTimeout}
 
@@ -319,6 +350,7 @@ Ceilings
     [Tags]  Describe Ceilings
     Log To Console  What type of Ceilings
     Wait Until Element is Visible  ${CeilingsHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${48%Progress}
     Click Button  ${PopcornCeilingButton}
     Wait Until Element is Visible  ${FlooringHeader}  ${DefaultTimeout}
 
@@ -327,6 +359,7 @@ Mail Level Floors
     [Tags]  Describe Floors
     Log To Console  What type of Floors
     Wait Until Element is Visible  ${FlooringHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${52%Progress}
     ${NewMLFoorsButtonCount}=  Get Element Count  ${GeneralButton}
     Should Be Equal As Numbers  ${NewMLFoorsButtonCount}  ${MLFoorsButtonCount}
     Click Button  ${HardWoodBtn}
@@ -342,6 +375,7 @@ Buy/Sell
     [Tags]  Buying or Selling
     Log To Console  Are you Buying or Selling
     Wait Until Element is Visible  ${LookingToSellTimeHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${56%Progress}
     Click Button  ${ASAPBtn}
     Wait Until Element is Visible  ${HomeWorthHeader}   ${DefaultTimeout}
 
@@ -352,6 +386,7 @@ Home Worth
     ${HomeWorth}=  Set Variable  ${Worth}
     Log To Console   What is your home worth
     Wait Until Element is Visible  ${HomeWorthHeader}   ${DefaultTimeout}
+    Element Should Be Visible  ${60%Progress}
     Click Element  ${HomeWorthText}
     Input Text  ${HomeWorthText}  ${HomeWorth}
     Click Button  ${NextButton}
@@ -364,6 +399,7 @@ Currently on the Market
     ${MSituation}=  Set Variable  ${Situation}
     Log To Console  Is you home currently on the market
     Wait Until Element is Visible  ${CurrentlyOnMarketHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${64%Progress}
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${AgentYesValidationText}   ${DefaultTimeout}
     Click Element  ${SituationTextField}
@@ -383,6 +419,7 @@ Looking to buy
     [Tags]  Are you looking to buy a home
     Log To Console  Are you looking to buy a home
     Wait Until Element is Visible  ${LookingToBuyHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${72%Progress}
     Click Button  ${NoButton}
     Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
@@ -395,6 +432,7 @@ Have you Found
     [Tags]  Have you found your House
     Log To Console  Have you found a new house
     Wait Until Element is Visible  ${HaveYouFoundHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${76%Progress}
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${WorkingWithAnotherAgent}  ${DefaultTimeout}
     Click Button  ${BackButton}
@@ -409,6 +447,7 @@ Working with another Agent?
     [Tags]  Working with another Agent Question
     Log To Console  Are you working with another Agent
     Wait Until Element is Visible  ${WorkingWithAnotherAgent}  ${DefaultTimeout}
+    Element Should Be Visible  ${80%Progress}
     Click Button  ${YesButton}
     Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
     Click Button  ${BackButton}
@@ -421,6 +460,7 @@ How did you hear
     [Tags]  How did you hear
     Log To Console  How did you hear about Knock
     Wait Until Element is Visible  ${HowDidYouHearHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${84%Progress}
     Click Button   ${TVSegmentBtn}
     Wait Until Element is Visible  ${EnterNameHeader}  ${DefaultTimeout}
 
@@ -432,6 +472,7 @@ Enter Name
     ${LastName}=  Set Variable   ${Last}
     Log To Console  First and Last Name Entry
     Wait Until Element is Visible  ${EnterNameHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${92%Progress}
     Click Element  ${FirstNameField}
     Input Text  ${FirstNameField}  ${FirstName}
     Click Element  ${LastNameField}
@@ -446,6 +487,7 @@ Enter Your Email
     ${EmailAddress}=  Set Variable  ${Email}
     Log To Console  Enter an Email Address
     Wait Until Element is Visible  ${EstimateHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${96%Progress}
     Click Element  ${EmailTextField}
     Input Text  ${EmailTextField}  ${EmailAddress}
     Click Button  ${NextButton}
@@ -457,6 +499,7 @@ Enter Mobile Number
     ${MobileNumber}=  Set Variable  ${Mobile}
     Log To Console  Enter a Mobile Number
     Wait Until Element is Visible  ${MobileNumberHeader}  ${DefaultTimeout}
+    Element Should Be Visible  ${100%Progress}
     Click Element  ${PhoneNumberField}
     Input Text  ${PhoneNumberField}  ${MobileNumber}
     Wait Until Element is Visible  ${SubmitBtn}

@@ -11,7 +11,7 @@ Test Teardown  End Web Test
 
 *** Variables ***
 
-${BROWSER}   headlessfirefox
+${BROWSER}   chrome
 
 
 
