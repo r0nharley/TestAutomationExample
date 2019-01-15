@@ -97,6 +97,12 @@ ${AddressFixHeader}                 //div[@class='_jy6h7s'][contains(.,'What is 
 ${AddressCorrectionField}           //input[contains(@placeholder,'Street Address')]
 ${AddressCorrection}                3695 Silver Brook Ln, Gainesville, GA
 ${NotAvailableHeader}               //h1[@class='_7pkvrf'][contains(.,'Get Notified When Knock Expands')]
+${UpdatesButtonCount}               12
+${GeneralButton}                    //button[@type='button']
+${DoesHomeButtonCount}              12
+${MLFoorsButtonCount}               7
+
+
 
 
 *** Keywords ***
@@ -183,6 +189,7 @@ Enter Valid Address
     Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
     Click Element  ${ValidSearchResult}
     Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    Wait Until Element is Visible   //div[contains(@class,'kstpkq')]
     Click Element  ${FixAddressButton}
     Wait Until Element is Visible  ${AddressFixHeader}  ${DefaultTimeout}
     Click Button  ${NextButton}
@@ -217,6 +224,8 @@ Does Home Have Any
     [Tags]  Does Home Have Any Upgrades
     Log To Console  Selecting Upgrade Options
     Wait Until Element is Visible  ${DoesYourHomeCopy}  ${DefaultTimeout}
+    ${NewDoesHomeButtonCount}=  Get Element Count  ${GeneralButton}
+    Should Be Equal As Numbers  ${NewDoesHomeButtonCount}  ${DoesHomeButtonCount}
     Click Button  ${PoolButton}
     Click Button  ${GarageButton}
     Click Button  ${BasementButton}
@@ -238,8 +247,10 @@ Updates
     [Tags]  Does Home Have Any Updates
     [Arguments]  ${DescribeUpdate}
     ${Description}=  Set Variable  ${DescribeUpdate}
+    ${NewUpdatesButtonCount}=  Get Element Count  ${GeneralButton}
     Log To Console  Selecting Update Options
     Wait Until Element is Visible  ${UpdatesCopy}
+    Should Be Equal As Numbers  ${NewUpdatesButtonCount}  ${UpdatesButtonCount}
     Click Button   ${NextButton}
     Wait Until Element is Visible  ${PleaseChooseOneValidationError}  ${DefaultTimeout}
     Click Button  ${KitchenCabinets}
@@ -316,6 +327,8 @@ Mail Level Floors
     [Tags]  Describe Floors
     Log To Console  What type of Floors
     Wait Until Element is Visible  ${FlooringHeader}  ${DefaultTimeout}
+    ${NewMLFoorsButtonCount}=  Get Element Count  ${GeneralButton}
+    Should Be Equal As Numbers  ${NewMLFoorsButtonCount}  ${MLFoorsButtonCount}
     Click Button  ${HardWoodBtn}
     Click Button  ${TileBtn}
     Click Button  ${LaminatedBtn}
