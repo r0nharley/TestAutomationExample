@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-      - run: sudo pip install webdriverdownloader
-      - run: sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-#      - run: test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-#      - run: test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-#      - run: test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-#      - run: echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+#      - run: sudo pip install webdriverdownloader
+      - run: wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+      - run: unzip chromedriver_linux64.zip
+      - run: sudo mv chromedriver /usr/bin/chromedriver
+      - run: sudo chown root:root /usr/bin/chromedriver
+      - run: sudo chmod +x /usr/bin/chromedriver
       - run: robot -d results  Central/Launch.robot
