@@ -9,8 +9,8 @@ jobs:
       - run: sudo pip install -r requirements.txt
       - run: sudo pip install webdriverdownloader
       - run: sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-      - run: test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-      - run: test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-      - run: test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-      - run: echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+#      - run: test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+#      - run: test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+#      - run: test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+#      - run: echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
       - run: robot -d results  Central/Launch.robot
