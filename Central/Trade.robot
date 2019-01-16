@@ -93,6 +93,7 @@ Enter Valid Address
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${ValidAddress}
     ${AddressIsFound}=  run keyword and return status  element should not be visible  ${CouldNotFindAddress}
+    run keyword if  ${AddressIsFound}   Log to console  Address found proceeding with workflow
     run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
     run keyword if  ${AddressIsFound}   Click Element  ${ValidSearchResult}
     run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
@@ -104,6 +105,7 @@ Enter Valid Address
     run keyword if  ${AddressIsFound}   Click Button  ${CorrectButton}
     run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
     ${AddressNotFound}=  run keyword and return status  element should be visible  ${CouldNotFindAddress}
+    run keyword if   ${AddressNotFound}  Log to console  Address NOT found proceeding with Manual entry workflow
     run keyword if   ${AddressNotFound}  Click Element  ${AddressFormButton}
     run keyword if   ${AddressNotFound}  Click Element  ${Address1}
     run keyword if   ${AddressNotFound}  Input Text  ${Address1}   3692 Silver Brook Ln

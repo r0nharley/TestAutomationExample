@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87aa7f7a-adc2-4bde-abd8-f5ed29474550" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Central/Launch.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Central/Launch.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Central/Trade.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Central/Trade.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Central/Variables.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Central/Variables.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/geckodriver.log" beforeDir="false" afterPath="$PROJECT_DIR$/results/geckodriver.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/results/log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results/output.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/results/report.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Central/Launch.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="22" selection-start-line="22" selection-start-column="1" selection-end-line="38" selection-end-column="69" />
+            <state relative-caret-position="460">
+              <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
               <folding>
                 <element signature="e#0#184#0" expanded="true" />
               </folding>
@@ -45,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Central/Trade.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+            <state relative-caret-position="299">
+              <caret line="107" column="103" selection-start-line="107" selection-start-column="103" selection-end-line="107" selection-end-column="103" />
               <folding>
                 <element signature="e#0#131#0" expanded="true" />
               </folding>
@@ -156,7 +150,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55745000" />
+    <option name="totallyTimeSpent" value="56143000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1971" y="92" width="1387" height="1011" extended-state="0" />
@@ -210,16 +204,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Central/Launch.robot">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="22" selection-start-line="22" selection-start-column="1" selection-end-line="38" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#184#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Central/Variables.robot">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="622">
@@ -227,10 +211,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Central/Launch.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Central/Trade.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="94" column="4" selection-start-line="94" selection-start-column="4" selection-end-line="94" selection-end-column="4" />
+        <state relative-caret-position="299">
+          <caret line="107" column="103" selection-start-line="107" selection-start-column="103" selection-end-line="107" selection-end-column="103" />
           <folding>
             <element signature="e#0#131#0" expanded="true" />
           </folding>
