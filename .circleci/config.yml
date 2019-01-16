@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run: sudo pip install -r requirements.txt
 #      - run: sudo pip install webdriverdownloader
-      - run: wget https://chromedriver.storage.googleapis.com/2.41/chromedriver_linux64.zip
+      - run: wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
       - run: unzip chromedriver_linux64.zip
       - run: sudo mv chromedriver /usr/bin/chromedriver
       - run: sudo chown root:root /usr/bin/chromedriver
