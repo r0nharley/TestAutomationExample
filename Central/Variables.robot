@@ -125,5 +125,12 @@ ${84%Progress}                      //div[contains(@style,'width: 84%;')]
 ${92%Progress}                      //div[contains(@style,'width: 92%;')]
 ${96%Progress}                      //div[contains(@style,'width: 96%;')]
 ${100%Progress}                     //div[contains(@style,'width: 100%;')]
+${EmptyProgressBar}                 //div[contains(@class,'kstpkq')]
+${CouldNotFindAddress}              //li[contains(.,'We could not find that address. Use the address form')]
+${AddressFormButton}                //a[contains(.,'Use the address form')]
+${Address1}                         //input[@placeholder='Street Address']
+${City}                             //input[@placeholder='City']
+${State}                            //select[contains(@class,'_9f8wah')]
+${Zip}                              //input[@placeholder='Zipcode']
 
 *** Keywords ***
