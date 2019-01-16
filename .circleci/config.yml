@@ -7,5 +7,5 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-      - run: brew install geckodriver
+      - run: sudo pip install webdriverdownloader
       - run: robot -d results  RobotFramework/Central/Launch.robot
