@@ -7,11 +7,11 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-#      - run: sudo pip install webdriverdownloader
+      - run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
       - run: wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
       - run: unzip chromedriver_linux64.zip
       - run: sudo mv chromedriver /usr/bin/chromedriver
       - run: sudo chown root:root /usr/bin/chromedriver
       - run: sudo chmod +x /usr/bin/chromedriver
-      - run: sudo apt-get install chromium-browser
+#      - run: sudo apt-get install chromium-browser
       - run: robot -d results  Central/Launch.robot
