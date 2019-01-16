@@ -13,5 +13,5 @@ jobs:
       - run: sudo mv chromedriver /usr/bin/chromedriver
       - run: sudo chown root:root /usr/bin/chromedriver
       - run: sudo chmod +x /usr/bin/chromedriver
-      - run: apt-get install chromium-browser
+      - run: sudo apt-get install chromium-browser
       - run: robot -d results  Central/Launch.robot
