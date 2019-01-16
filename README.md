@@ -56,7 +56,7 @@ http://phantomjs.org/download.html
 
 ## Running the tests
 
-Test will run with Headless Firefox by default. This can be changed in the `${BROWSER}` variable in the  `Launch.robot` file
+Test will run with Headless Chrome by default. This can be changed in the `${BROWSER}` variable in the  `Launch.robot` file
 
 ```
 robot -d results  Central/Launch.robot
