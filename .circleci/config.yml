@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-      - run: sudo pip update selenium
+      - run: sudo pip install selenium -U
       - run: sudo apt install libfontconfig
 #      - run: wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/64.0.2/linux-x86_64/en-US/firefox-64.0.2.tar.bz2
 #      - run: tar xvf firefox*.tar.bz2
