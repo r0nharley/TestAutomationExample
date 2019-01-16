@@ -8,6 +8,8 @@ jobs:
       - checkout
       - run: sudo pip install -r requirements.txt
       - run: wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/64.0.2/linux-x86_64/en-US/firefox-64.0.2.tar.bz2
+      - run: tar xvf firefox*.tar.bz2
+      - run: ./firefox/firefox
       - run: wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
       - run: tar -xvzf geckodriver*
       - run: sudo mv geckodriver /usr/bin/geckodriver
