@@ -7,12 +7,6 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-#      - run: sudo pip install webdriverdownloader
-      - run: INSTALL_DIR="/usr/local/bin"
-      - run: json=$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/latest)
-      - run: url=$(echo "$json" | jq -r '.assets[].browser_download_url | select(contains("linux64"))')
-      - run: curl -s -L "$url" | tar -xz
-      - run: chmod +x geckodriver
-      - run: sudo mv geckodriver "$INSTALL_DIR"
-      - run: echo "installed geckodriver binary in $INSTALL_DIR"
+      - run: sudo pip install webdriverdownloader
+      - run: find path pattern
       - run: robot -d results  Central/Launch.robot
