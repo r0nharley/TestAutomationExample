@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-#      - run: wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      - run: sudo apt install firefox
       - run: wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
       - run: tar -xvzf geckodriver*
       - run: sudo mv geckodriver /usr/bin/geckodriver
