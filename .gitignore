@@ -1,0 +1,9 @@
+.cache/
+.env
+.idea/
+**/.cache/
+**/.idea/
+logs/
+results/
+geckodriver.log
+ghostdriver.log

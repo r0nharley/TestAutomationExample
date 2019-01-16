@@ -4,7 +4,7 @@ Library  SeleniumLibrary
 
 *** Variables ***
 
-
+git
 
 *** Keywords ***
 
