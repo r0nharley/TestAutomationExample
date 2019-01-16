@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.0.4 (Python 3.6.4 on darwin)" generated="20190115 18:24:20.423">
+<robot generator="Robot 3.0.4 (Python 3.6.4 on darwin)" generated="20190115 20:19:09.280">
 <suite id="s1" name="Launch" source="/Users/ronharley/AutomatedTests/KnockPOC/Central/Launch.robot">
-<test id="s1-t1" name="TradeIn">
+<test id="s1-t1" name="Fill In Trade-in Form">
 <kw name="Begin Web Test" library="Common" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the given ``url``.</doc>
@@ -9,19 +9,11 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:20.564" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20190115 18:24:20.564" endtime="20190115 18:24:22.379"></status>
+<msg timestamp="20190115 20:19:09.466" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20190115 20:19:09.466" endtime="20190115 20:19:11.303"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:20.564" endtime="20190115 18:24:22.379"></status>
+<status status="PASS" starttime="20190115 20:19:09.466" endtime="20190115 20:19:11.303"></status>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>Trade in Workflow</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:22.379" endtime="20190115 18:24:22.380"></status>
-</kw>
-<kw name="TradeInWorkflow" library="Trade">
 <kw name="Navigate to Page" library="Trade">
 <tags>
 <tag>Go to Knock url</tag>
@@ -31,214 +23,30 @@
 <arguments>
 <arg>Navigating to Knock.com</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:22.381" endtime="20190115 18:24:22.381"></status>
+<status status="PASS" starttime="20190115 20:19:11.305" endtime="20190115 20:19:11.305"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${KnockURL}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:22.382" level="INFO">Opening url 'https://www.knock.com/'</msg>
-<status status="PASS" starttime="20190115 18:24:22.381" endtime="20190115 18:24:23.178"></status>
+<msg timestamp="20190115 20:19:11.306" level="INFO">Opening url 'https://www.knock.com/'</msg>
+<status status="PASS" starttime="20190115 20:19:11.305" endtime="20190115 20:19:12.152"></status>
 </kw>
 <kw name="Delete All Cookies" library="SeleniumLibrary">
 <doc>Deletes all cookies.</doc>
-<status status="PASS" starttime="20190115 18:24:23.178" endtime="20190115 18:24:23.390"></status>
+<status status="PASS" starttime="20190115 20:19:12.152" endtime="20190115 20:19:12.350"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20190115 18:24:23.391" endtime="20190115 18:24:23.710"></status>
+<status status="PASS" starttime="20190115 20:19:12.350" endtime="20190115 20:19:12.677"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190115 18:24:25.910" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-45.png"&gt;&lt;img src="selenium-screenshot-45.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:23.710" endtime="20190115 18:24:25.910"></status>
+<msg timestamp="20190115 20:19:14.651" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-100.png"&gt;&lt;img src="selenium-screenshot-100.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190115 20:19:12.678" endtime="20190115 20:19:14.651"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:22.381" endtime="20190115 18:24:25.910"></status>
-</kw>
-<kw name="Enter Invalid Address" library="Trade">
-<tags>
-<tag>Enter Invalid Address</tag>
-</tags>
-<arguments>
-<arg>3691 Silver Brook Ln, Gainesville, GA</arg>
-</arguments>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>${Invalid}</arg>
-</arguments>
-<assign>
-<var>${InvalidAddress}</var>
-</assign>
-<msg timestamp="20190115 18:24:25.912" level="INFO">${InvalidAddress} = 3691 Silver Brook Ln, Gainesville, GA</msg>
-<status status="PASS" starttime="20190115 18:24:25.911" endtime="20190115 18:24:25.912"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>//li[@class='_jx6g50i'][contains(.,'${InvalidAddress}')]</arg>
-</arguments>
-<assign>
-<var>${InValidSearchResult}</var>
-</assign>
-<msg timestamp="20190115 18:24:25.912" level="INFO">${InValidSearchResult} = //li[@class='_jx6g50i'][contains(.,'3691 Silver Brook Ln, Gainesville, GA')]</msg>
-<status status="PASS" starttime="20190115 18:24:25.912" endtime="20190115 18:24:25.912"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>Entering a Invalid Address</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:25.912" endtime="20190115 18:24:25.913"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${EnterAddress}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:25.913" level="INFO">Clicking element '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:25.913" endtime="20190115 18:24:26.008"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${EnterAddress}</arg>
-<arg>${InvalidAddress}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:26.009" level="INFO">Typing text '3691 Silver Brook Ln, Gainesville, GA' into text field '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:26.009" endtime="20190115 18:24:26.300"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>${InValidSearchResult}</arg>
-<arg>${DefaultTimeout}</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:26.300" endtime="20190115 18:24:26.536"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${InValidSearchResult}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:26.536" level="INFO">Clicking element '//li[@class='_jx6g50i'][contains(.,'3691 Silver Brook Ln, Gainesville, GA')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:26.536" endtime="20190115 18:24:26.660"></status>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190115 18:24:27.243" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-46.png"&gt;&lt;img src="selenium-screenshot-46.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:26.660" endtime="20190115 18:24:27.244"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>${AlreadySubmittedText}</arg>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:27.244" endtime="20190115 18:24:28.759"></status>
-</kw>
-<status status="PASS" starttime="20190115 18:24:25.910" endtime="20190115 18:24:28.759"></status>
-</kw>
-<kw name="Expand Notification" library="Trade">
-<tags>
-<tag>Not Operating in your Area</tag>
-</tags>
-<arguments>
-<arg>1455 Biscayne Boulevard, Miami, FL</arg>
-</arguments>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>${NotAvailable}</arg>
-</arguments>
-<assign>
-<var>${NotAvailableAddress}</var>
-</assign>
-<msg timestamp="20190115 18:24:28.759" level="INFO">${NotAvailableAddress} = 1455 Biscayne Boulevard, Miami, FL</msg>
-<status status="PASS" starttime="20190115 18:24:28.759" endtime="20190115 18:24:28.760"></status>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<arguments>
-<arg>//li[@class='_jx6g50i'][contains(.,'${NotAvailableAddress}')]</arg>
-</arguments>
-<assign>
-<var>${NotAvailableSearch}</var>
-</assign>
-<msg timestamp="20190115 18:24:28.760" level="INFO">${NotAvailableSearch} = //li[@class='_jx6g50i'][contains(.,'1455 Biscayne Boulevard, Miami, FL')]</msg>
-<status status="PASS" starttime="20190115 18:24:28.760" endtime="20190115 18:24:28.760"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>Enter an Address thats not covered</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:28.760" endtime="20190115 18:24:28.760"></status>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the active browser instance to the provided ``url``.</doc>
-<arguments>
-<arg>${KnockURL}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:28.760" level="INFO">Opening url 'https://www.knock.com/'</msg>
-<status status="PASS" starttime="20190115 18:24:28.760" endtime="20190115 18:24:29.205"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2</arg>
-</arguments>
-<msg timestamp="20190115 18:24:31.207" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20190115 18:24:29.205" endtime="20190115 18:24:31.207"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${EnterAddress}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:31.208" level="INFO">Clicking element '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:31.207" endtime="20190115 18:24:31.271"></status>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
-<arguments>
-<arg>${EnterAddress}</arg>
-<arg>${NotAvailableAddress}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:31.272" level="INFO">Typing text '1455 Biscayne Boulevard, Miami, FL' into text field '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:31.271" endtime="20190115 18:24:31.533"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NotAvailableSearch}</arg>
-<arg>${DefaultTimeout}</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:31.533" endtime="20190115 18:24:31.562"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
-<arguments>
-<arg>${NotAvailableSearch}</arg>
-</arguments>
-<msg timestamp="20190115 18:24:31.563" level="INFO">Clicking element '//li[@class='_jx6g50i'][contains(.,'1455 Biscayne Boulevard, Miami, FL')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:31.563" endtime="20190115 18:24:31.699"></status>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190115 18:24:32.282" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-47.png"&gt;&lt;img src="selenium-screenshot-47.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:31.700" endtime="20190115 18:24:32.282"></status>
-</kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
-<arguments>
-<arg>${NotAvailableHeader}</arg>
-<arg>20</arg>
-</arguments>
-<status status="PASS" starttime="20190115 18:24:32.282" endtime="20190115 18:24:33.571"></status>
-</kw>
-<status status="PASS" starttime="20190115 18:24:28.759" endtime="20190115 18:24:33.572"></status>
+<status status="PASS" starttime="20190115 20:19:11.304" endtime="20190115 20:19:14.651"></status>
 </kw>
 <kw name="Enter Valid Address" library="Trade">
 <tags>
@@ -255,8 +63,8 @@
 <assign>
 <var>${ValidAddress}</var>
 </assign>
-<msg timestamp="20190115 18:24:33.572" level="INFO">${ValidAddress} = 3692 Silver Brook Ln, Gainesville, GA</msg>
-<status status="PASS" starttime="20190115 18:24:33.572" endtime="20190115 18:24:33.573"></status>
+<msg timestamp="20190115 20:19:14.652" level="INFO">${ValidAddress} = 3692 Silver Brook Ln, Gainesville, GA</msg>
+<status status="PASS" starttime="20190115 20:19:14.652" endtime="20190115 20:19:14.652"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -266,47 +74,51 @@
 <assign>
 <var>${ValidSearchResult}</var>
 </assign>
-<msg timestamp="20190115 18:24:33.573" level="INFO">${ValidSearchResult} = //li[@class='_jx6g50i'][contains(.,'3692 Silver Brook Ln, Gainesville, GA')]</msg>
-<status status="PASS" starttime="20190115 18:24:33.573" endtime="20190115 18:24:33.573"></status>
+<msg timestamp="20190115 20:19:14.652" level="INFO">${ValidSearchResult} = //li[@class='_jx6g50i'][contains(.,'3692 Silver Brook Ln, Gainesville, GA')]</msg>
+<status status="PASS" starttime="20190115 20:19:14.652" endtime="20190115 20:19:14.652"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>Entering a Valid Address</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:33.573" endtime="20190115 18:24:33.573"></status>
+<status status="PASS" starttime="20190115 20:19:14.653" endtime="20190115 20:19:14.653"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the active browser instance to the provided ``url``.</doc>
 <arguments>
 <arg>${KnockURL}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:33.574" level="INFO">Opening url 'https://www.knock.com/'</msg>
-<status status="PASS" starttime="20190115 18:24:33.573" endtime="20190115 18:24:33.988"></status>
+<msg timestamp="20190115 20:19:14.653" level="INFO">Opening url 'https://www.knock.com/'</msg>
+<status status="PASS" starttime="20190115 20:19:14.653" endtime="20190115 20:19:14.979"></status>
+</kw>
+<kw name="Delete All Cookies" library="SeleniumLibrary">
+<doc>Deletes all cookies.</doc>
+<status status="PASS" starttime="20190115 20:19:14.979" endtime="20190115 20:19:15.161"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2</arg>
 </arguments>
-<msg timestamp="20190115 18:24:35.991" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20190115 18:24:33.989" endtime="20190115 18:24:35.991"></status>
+<msg timestamp="20190115 20:19:17.162" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20190115 20:19:15.162" endtime="20190115 20:19:17.162"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${EnterAddress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:35.992" level="INFO">Clicking element '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:35.991" endtime="20190115 18:24:36.052"></status>
+<msg timestamp="20190115 20:19:17.163" level="INFO">Clicking element '//input[@placeholder='Enter your home address']'.</msg>
+<status status="PASS" starttime="20190115 20:19:17.163" endtime="20190115 20:19:17.238"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${GetTradeButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:36.053" level="INFO">Clicking button '//button[@class='_13u5ve25']'.</msg>
-<status status="PASS" starttime="20190115 18:24:36.053" endtime="20190115 18:24:36.126"></status>
+<msg timestamp="20190115 20:19:17.238" level="INFO">Clicking button '//button[@class='_13u5ve25']'.</msg>
+<status status="PASS" starttime="20190115 20:19:17.238" endtime="20190115 20:19:17.310"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -314,15 +126,15 @@
 <arg>${EnterAddress}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:36.126" endtime="20190115 18:24:36.146"></status>
+<status status="PASS" starttime="20190115 20:19:17.311" endtime="20190115 20:19:17.330"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${EnterAddress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:36.146" level="INFO">Clicking element '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:36.146" endtime="20190115 18:24:36.188"></status>
+<msg timestamp="20190115 20:19:17.330" level="INFO">Clicking element '//input[@placeholder='Enter your home address']'.</msg>
+<status status="PASS" starttime="20190115 20:19:17.330" endtime="20190115 20:19:17.370"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -330,94 +142,379 @@
 <arg>${EnterAddress}</arg>
 <arg>${ValidAddress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:36.189" level="INFO">Typing text '3692 Silver Brook Ln, Gainesville, GA' into text field '//input[@placeholder='Enter your home address']'.</msg>
-<status status="PASS" starttime="20190115 18:24:36.188" endtime="20190115 18:24:36.410"></status>
+<msg timestamp="20190115 20:19:17.370" level="INFO">Typing text '3692 Silver Brook Ln, Gainesville, GA' into text field '//input[@placeholder='Enter your home address']'.</msg>
+<status status="PASS" starttime="20190115 20:19:17.370" endtime="20190115 20:19:17.654"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <arguments>
+<arg>element should not be visible</arg>
+<arg>${CouldNotFindAddress}</arg>
+</arguments>
+<assign>
+<var>${AddressIsFound}</var>
+</assign>
+<kw name="Element Should Not Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<arguments>
+<arg>${CouldNotFindAddress}</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20190115 20:19:19.057" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-101.png"&gt;&lt;img src="selenium-screenshot-101.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190115 20:19:17.678" endtime="20190115 20:19:19.057"></status>
+</kw>
+<msg timestamp="20190115 20:19:19.061" level="FAIL">The element '//li[contains(.,'We could not find that address. Use the address form')]' should not be visible, but it is.</msg>
+<status status="FAIL" starttime="20190115 20:19:17.655" endtime="20190115 20:19:19.061"></status>
+</kw>
+<msg timestamp="20190115 20:19:19.061" level="INFO">${AddressIsFound} = False</msg>
+<status status="PASS" starttime="20190115 20:19:17.655" endtime="20190115 20:19:19.061"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Wait Until Element is Visible</arg>
 <arg>${ValidSearchResult}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:36.410" endtime="20190115 18:24:36.433"></status>
+<status status="PASS" starttime="20190115 20:19:19.061" endtime="20190115 20:19:19.061"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Click Element</arg>
 <arg>${ValidSearchResult}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:36.433" level="INFO">Clicking element '//li[@class='_jx6g50i'][contains(.,'3692 Silver Brook Ln, Gainesville, GA')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:36.433" endtime="20190115 18:24:36.554"></status>
+<status status="PASS" starttime="20190115 20:19:19.061" endtime="20190115 20:19:19.062"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Wait Until Element is Visible</arg>
 <arg>${IsAddressCorrectCopy}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:36.554" endtime="20190115 18:24:37.932"></status>
+<status status="PASS" starttime="20190115 20:19:19.062" endtime="20190115 20:19:19.062"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>//div[contains(@class,'kstpkq')]</arg>
+<arg>${AddressIsFound}</arg>
+<arg>Wait Until Element is Visible</arg>
+<arg>${EmptyProgressBar}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:37.932" endtime="20190115 18:24:37.954"></status>
+<status status="PASS" starttime="20190115 20:19:19.062" endtime="20190115 20:19:19.062"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click element identified by ``locator``.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Click Element</arg>
 <arg>${FixAddressButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:37.954" level="INFO">Clicking element '//a[@class='_12wqpluh'][contains(.,'Add Unit # or Fix Address')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:37.954" endtime="20190115 18:24:38.046"></status>
+<status status="PASS" starttime="20190115 20:19:19.062" endtime="20190115 20:19:19.063"></status>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<doc>Waits until element ``locator`` is visible.</doc>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Wait Until Element is Visible</arg>
 <arg>${AddressFixHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:38.046" endtime="20190115 18:24:38.085"></status>
+<status status="PASS" starttime="20190115 20:19:19.063" endtime="20190115 20:19:19.063"></status>
 </kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Click Button</arg>
+<arg>${NextButton}</arg>
+</arguments>
+<status status="PASS" starttime="20190115 20:19:19.063" endtime="20190115 20:19:19.063"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Wait Until Element is Visible</arg>
+<arg>${IsAddressCorrectCopy}</arg>
+<arg>${DefaultTimeout}</arg>
+</arguments>
+<status status="PASS" starttime="20190115 20:19:19.063" endtime="20190115 20:19:19.063"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Click Button</arg>
+<arg>${CorrectButton}</arg>
+</arguments>
+<status status="PASS" starttime="20190115 20:19:19.064" endtime="20190115 20:19:19.064"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressIsFound}</arg>
+<arg>Wait Until Element is Visible</arg>
+<arg>${LetsStartCopy}</arg>
+<arg>${DefaultTimeout}</arg>
+</arguments>
+<status status="PASS" starttime="20190115 20:19:19.064" endtime="20190115 20:19:19.064"></status>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>element should be visible</arg>
+<arg>${CouldNotFindAddress}</arg>
+</arguments>
+<assign>
+<var>${AddressNotFound}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${CouldNotFindAddress}</arg>
+</arguments>
+<msg timestamp="20190115 20:19:19.078" level="INFO">Element '//li[contains(.,'We could not find that address. Use the address form')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:19.064" endtime="20190115 20:19:19.078"></status>
+</kw>
+<msg timestamp="20190115 20:19:19.079" level="INFO">${AddressNotFound} = True</msg>
+<status status="PASS" starttime="20190115 20:19:19.064" endtime="20190115 20:19:19.079"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Element</arg>
+<arg>${AddressFormButton}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${AddressFormButton}</arg>
+</arguments>
+<msg timestamp="20190115 20:19:19.079" level="INFO">Clicking element '//a[contains(.,'Use the address form')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:19.079" endtime="20190115 20:19:19.323"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:19.079" endtime="20190115 20:19:19.323"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Element</arg>
+<arg>${Address1}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Address1}</arg>
+</arguments>
+<msg timestamp="20190115 20:19:19.324" level="INFO">Clicking element '//input[@placeholder='Street Address']'.</msg>
+<status status="PASS" starttime="20190115 20:19:19.324" endtime="20190115 20:19:19.725"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:19.323" endtime="20190115 20:19:19.725"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Input Text</arg>
+<arg>${Address1}</arg>
+<arg>3692 Silver Brook Ln</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Address1}</arg>
+<arg>3692 Silver Brook Ln</arg>
+</arguments>
+<msg timestamp="20190115 20:19:19.725" level="INFO">Typing text '3692 Silver Brook Ln' into text field '//input[@placeholder='Street Address']'.</msg>
+<status status="PASS" starttime="20190115 20:19:19.725" endtime="20190115 20:19:19.969"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:19.725" endtime="20190115 20:19:19.969"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Element</arg>
+<arg>${City}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${City}</arg>
+</arguments>
+<msg timestamp="20190115 20:19:19.970" level="INFO">Clicking element '//input[@placeholder='City']'.</msg>
+<status status="PASS" starttime="20190115 20:19:19.969" endtime="20190115 20:19:20.019"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:19.969" endtime="20190115 20:19:20.019"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Input Text</arg>
+<arg>${City}</arg>
+<arg>Gainesville</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${City}</arg>
+<arg>Gainesville</arg>
+</arguments>
+<msg timestamp="20190115 20:19:20.020" level="INFO">Typing text 'Gainesville' into text field '//input[@placeholder='City']'.</msg>
+<status status="PASS" starttime="20190115 20:19:20.020" endtime="20190115 20:19:20.147"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:20.019" endtime="20190115 20:19:20.147"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Element</arg>
+<arg>${State}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${State}</arg>
+</arguments>
+<msg timestamp="20190115 20:19:20.148" level="INFO">Clicking element '//select[contains(@class,'_9f8wah')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:20.148" endtime="20190115 20:19:20.251"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:20.147" endtime="20190115 20:19:20.251"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>click element</arg>
+<arg>xpath=//option[contains(text(),'GA')]</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//option[contains(text(),'GA')]</arg>
+</arguments>
+<msg timestamp="20190115 20:19:20.252" level="INFO">Clicking element 'xpath=//option[contains(text(),'GA')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:20.252" endtime="20190115 20:19:20.566"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:20.251" endtime="20190115 20:19:20.566"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Element</arg>
+<arg>${Zip}</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>${Zip}</arg>
+</arguments>
+<msg timestamp="20190115 20:19:20.567" level="INFO">Clicking element '//input[@placeholder='Zipcode']'.</msg>
+<status status="PASS" starttime="20190115 20:19:20.567" endtime="20190115 20:19:20.858"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:20.566" endtime="20190115 20:19:20.858"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Input Text</arg>
+<arg>${Zip}</arg>
+<arg>30506</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${Zip}</arg>
+<arg>30506</arg>
+</arguments>
+<msg timestamp="20190115 20:19:20.858" level="INFO">Typing text '30506' into text field '//input[@placeholder='Zipcode']'.</msg>
+<status status="PASS" starttime="20190115 20:19:20.858" endtime="20190115 20:19:20.929"></status>
+</kw>
+<status status="PASS" starttime="20190115 20:19:20.858" endtime="20190115 20:19:20.929"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Button</arg>
+<arg>${NextButton}</arg>
+</arguments>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:38.085" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:38.085" endtime="20190115 18:24:38.202"></status>
+<msg timestamp="20190115 20:19:20.930" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:20.930" endtime="20190115 20:19:21.049"></status>
 </kw>
+<status status="PASS" starttime="20190115 20:19:20.930" endtime="20190115 20:19:21.050"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Wait Until Element is Visible</arg>
+<arg>${IsAddressCorrectCopy}</arg>
+<arg>${DefaultTimeout}</arg>
+</arguments>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
 <arg>${IsAddressCorrectCopy}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:38.202" endtime="20190115 18:24:39.710"></status>
+<status status="PASS" starttime="20190115 20:19:21.050" endtime="20190115 20:19:22.987"></status>
 </kw>
+<status status="PASS" starttime="20190115 20:19:21.050" endtime="20190115 20:19:22.987"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Click Button</arg>
+<arg>${CorrectButton}</arg>
+</arguments>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${CorrectButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:39.710" level="INFO">Clicking button '//button[@type='button'][contains(.,'Correct')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:39.710" endtime="20190115 18:24:39.847"></status>
+<msg timestamp="20190115 20:19:22.988" level="INFO">Clicking button '//button[@type='button'][contains(.,'Correct')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:22.988" endtime="20190115 20:19:23.122"></status>
 </kw>
+<status status="PASS" starttime="20190115 20:19:22.988" endtime="20190115 20:19:23.122"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${AddressNotFound}</arg>
+<arg>Wait Until Element is Visible</arg>
+<arg>${LetsStartCopy}</arg>
+<arg>${DefaultTimeout}</arg>
+</arguments>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
 <arg>${LetsStartCopy}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:39.848" endtime="20190115 18:24:39.887"></status>
+<status status="PASS" starttime="20190115 20:19:23.123" endtime="20190115 20:19:23.153"></status>
 </kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190115 18:24:40.344" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-48.png"&gt;&lt;img src="selenium-screenshot-48.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:39.887" endtime="20190115 18:24:40.344"></status>
+<status status="PASS" starttime="20190115 20:19:23.122" endtime="20190115 20:19:23.153"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:33.572" endtime="20190115 18:24:40.344"></status>
+<status status="PASS" starttime="20190115 20:19:14.651" endtime="20190115 20:19:23.153"></status>
 </kw>
 <kw name="Basic Facts" library="Trade">
 <tags>
@@ -435,8 +532,8 @@
 <assign>
 <var>${YearB}</var>
 </assign>
-<msg timestamp="20190115 18:24:40.345" level="INFO">${YearB} = 1996</msg>
-<status status="PASS" starttime="20190115 18:24:40.345" endtime="20190115 18:24:40.345"></status>
+<msg timestamp="20190115 20:19:23.154" level="INFO">${YearB} = 1996</msg>
+<status status="PASS" starttime="20190115 20:19:23.154" endtime="20190115 20:19:23.154"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -446,55 +543,55 @@
 <assign>
 <var>${SqFootage}</var>
 </assign>
-<msg timestamp="20190115 18:24:40.346" level="INFO">${SqFootage} = 1500</msg>
-<status status="PASS" starttime="20190115 18:24:40.345" endtime="20190115 18:24:40.346"></status>
+<msg timestamp="20190115 20:19:23.155" level="INFO">${SqFootage} = 1500</msg>
+<status status="PASS" starttime="20190115 20:19:23.154" endtime="20190115 20:19:23.155"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>Selecting Basic Facts</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:40.346" endtime="20190115 18:24:40.346"></status>
+<status status="PASS" starttime="20190115 20:19:23.155" endtime="20190115 20:19:23.155"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${8%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.368" level="INFO">Element '//div[contains(@style,'width: 8%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:40.346" endtime="20190115 18:24:40.368"></status>
+<msg timestamp="20190115 20:19:23.177" level="INFO">Element '//div[contains(@style,'width: 8%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:23.155" endtime="20190115 20:19:23.177"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${AddBedrooms}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.368" level="INFO">Clicking button '(//button[contains(@class,'_133gcyr1')])[1]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.368" endtime="20190115 18:24:40.447"></status>
+<msg timestamp="20190115 20:19:23.178" level="INFO">Clicking button '(//button[contains(@class,'_133gcyr1')])[1]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.177" endtime="20190115 20:19:23.268"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${AddFullBathrooms}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.448" level="INFO">Clicking button '(//button[contains(@class,'_133gcyr1')])[2]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.448" endtime="20190115 18:24:40.518"></status>
+<msg timestamp="20190115 20:19:23.269" level="INFO">Clicking button '(//button[contains(@class,'_133gcyr1')])[2]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.268" endtime="20190115 20:19:23.335"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${AddHalfBathrooms}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.518" level="INFO">Clicking button '(//button[contains(@class,'_133gcyr1')])[3]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.518" endtime="20190115 18:24:40.597"></status>
+<msg timestamp="20190115 20:19:23.335" level="INFO">Clicking button '(//button[contains(@class,'_133gcyr1')])[3]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.335" endtime="20190115 20:19:23.402"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${YearBuild}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.597" level="INFO">Clicking element '(//input[contains(@type,'tel')])[1]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.597" endtime="20190115 18:24:40.665"></status>
+<msg timestamp="20190115 20:19:23.402" level="INFO">Clicking element '(//input[contains(@type,'tel')])[1]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.402" endtime="20190115 20:19:23.456"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -502,16 +599,16 @@
 <arg>${YearBuild}</arg>
 <arg>${YearB}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.665" level="INFO">Typing text '1996' into text field '(//input[contains(@type,'tel')])[1]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.665" endtime="20190115 18:24:40.771"></status>
+<msg timestamp="20190115 20:19:23.457" level="INFO">Typing text '1996' into text field '(//input[contains(@type,'tel')])[1]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.456" endtime="20190115 20:19:23.554"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${SqFt}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.772" level="INFO">Clicking element '(//input[contains(@type,'tel')])[2]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.772" endtime="20190115 18:24:40.839"></status>
+<msg timestamp="20190115 20:19:23.554" level="INFO">Clicking element '(//input[contains(@type,'tel')])[2]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.554" endtime="20190115 20:19:23.610"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -519,16 +616,16 @@
 <arg>${SqFt}</arg>
 <arg>${YearB}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.840" level="INFO">Typing text '1996' into text field '(//input[contains(@type,'tel')])[2]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.839" endtime="20190115 18:24:40.939"></status>
+<msg timestamp="20190115 20:19:23.610" level="INFO">Typing text '1996' into text field '(//input[contains(@type,'tel')])[2]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.610" endtime="20190115 20:19:23.703"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${HomeType}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:40.940" level="INFO">Clicking element '//div[contains(@class,'_t2qorhv')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:40.939" endtime="20190115 18:24:41.008"></status>
+<msg timestamp="20190115 20:19:23.704" level="INFO">Clicking element '//div[contains(@class,'_t2qorhv')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:23.704" endtime="20190115 20:19:23.773"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -536,23 +633,23 @@
 <arg>${HomeTypeSingleFam}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:41.009" endtime="20190115 18:24:41.033"></status>
+<status status="PASS" starttime="20190115 20:19:23.773" endtime="20190115 20:19:24.013"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.034" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20190115 18:24:41.033" endtime="20190115 18:24:42.034"></status>
+<msg timestamp="20190115 20:19:25.014" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190115 20:19:24.014" endtime="20190115 20:19:25.015"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${HomeTypeSingleFam}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.035" level="INFO">Clicking element '(//div[contains(.,'Single Family')])[10]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.035" endtime="20190115 18:24:42.096"></status>
+<msg timestamp="20190115 20:19:25.015" level="INFO">Clicking element '(//div[contains(.,'Single Family')])[10]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.015" endtime="20190115 20:19:25.074"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -560,17 +657,17 @@
 <arg>${NextButton}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:42.096" endtime="20190115 18:24:42.117"></status>
+<status status="PASS" starttime="20190115 20:19:25.074" endtime="20190115 20:19:25.092"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.118" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.117" endtime="20190115 18:24:42.267"></status>
+<msg timestamp="20190115 20:19:25.092" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.092" endtime="20190115 20:19:25.217"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:40.345" endtime="20190115 18:24:42.268"></status>
+<status status="PASS" starttime="20190115 20:19:23.154" endtime="20190115 20:19:25.217"></status>
 </kw>
 <kw name="Does Home Have Any" library="Trade">
 <tags>
@@ -581,7 +678,7 @@
 <arguments>
 <arg>Selecting Upgrade Options</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:42.268" endtime="20190115 18:24:42.269"></status>
+<status status="PASS" starttime="20190115 20:19:25.218" endtime="20190115 20:19:25.218"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -589,7 +686,7 @@
 <arg>${DoesYourHomeCopy}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:42.269" endtime="20190115 18:24:42.295"></status>
+<status status="PASS" starttime="20190115 20:19:25.218" endtime="20190115 20:19:25.245"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns number of elements matching ``locator``.</doc>
@@ -599,8 +696,8 @@
 <assign>
 <var>${NewDoesHomeButtonCount}</var>
 </assign>
-<msg timestamp="20190115 18:24:42.307" level="INFO">${NewDoesHomeButtonCount} = 12</msg>
-<status status="PASS" starttime="20190115 18:24:42.295" endtime="20190115 18:24:42.307"></status>
+<msg timestamp="20190115 20:19:25.257" level="INFO">${NewDoesHomeButtonCount} = 12</msg>
+<status status="PASS" starttime="20190115 20:19:25.245" endtime="20190115 20:19:25.257"></status>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
@@ -608,98 +705,98 @@
 <arg>${NewDoesHomeButtonCount}</arg>
 <arg>${DoesHomeButtonCount}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.308" level="INFO">Argument types are:
+<msg timestamp="20190115 20:19:25.258" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:42.307" endtime="20190115 18:24:42.308"></status>
+<status status="PASS" starttime="20190115 20:19:25.258" endtime="20190115 20:19:25.258"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${12%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.328" level="INFO">Element '//div[contains(@style,'width: 12%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:42.308" endtime="20190115 18:24:42.328"></status>
+<msg timestamp="20190115 20:19:25.276" level="INFO">Element '//div[contains(@style,'width: 12%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:25.258" endtime="20190115 20:19:25.276"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${PoolButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.329" level="INFO">Clicking button '//button[@type='button'][contains(.,'Pool')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.329" endtime="20190115 18:24:42.421"></status>
+<msg timestamp="20190115 20:19:25.276" level="INFO">Clicking button '//button[@type='button'][contains(.,'Pool')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.276" endtime="20190115 20:19:25.369"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${GarageButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.421" level="INFO">Clicking button '//button[@type='button'][contains(.,'Garage')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.421" endtime="20190115 18:24:42.498"></status>
+<msg timestamp="20190115 20:19:25.370" level="INFO">Clicking button '//button[@type='button'][contains(.,'Garage')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.369" endtime="20190115 20:19:25.437"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BasementButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.498" level="INFO">Clicking button '//button[@type='button'][contains(.,'Basement')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.498" endtime="20190115 18:24:42.572"></status>
+<msg timestamp="20190115 20:19:25.437" level="INFO">Clicking button '//button[@type='button'][contains(.,'Basement')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.437" endtime="20190115 20:19:25.507"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${WaterDamageButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.572" level="INFO">Clicking button '//button[@type='button'][contains(.,'Water Damage')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.572" endtime="20190115 18:24:42.642"></status>
+<msg timestamp="20190115 20:19:25.507" level="INFO">Clicking button '//button[@type='button'][contains(.,'Water Damage')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.507" endtime="20190115 20:19:25.577"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${PetIssues}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.644" level="INFO">Clicking button '//button[@type='button'][contains(.,'Pest Issues')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.643" endtime="20190115 18:24:42.716"></status>
+<msg timestamp="20190115 20:19:25.578" level="INFO">Clicking button '//button[@type='button'][contains(.,'Pest Issues')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.578" endtime="20190115 20:19:25.646"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${PlumbingIssues}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.716" level="INFO">Clicking button '//button[@type='button'][contains(.,'Plumbing Issues')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.716" endtime="20190115 18:24:42.787"></status>
+<msg timestamp="20190115 20:19:25.647" level="INFO">Clicking button '//button[@type='button'][contains(.,'Plumbing Issues')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.646" endtime="20190115 20:19:25.713"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${DrainageProblem}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.787" level="INFO">Clicking button '//button[@type='button'][contains(.,'Drainage Problem')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.787" endtime="20190115 18:24:42.857"></status>
+<msg timestamp="20190115 20:19:25.714" level="INFO">Clicking button '//button[@type='button'][contains(.,'Drainage Problem')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.713" endtime="20190115 20:19:25.783"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${FondationIssues}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.858" level="INFO">Clicking button '//button[@type='button'][contains(.,'Foundation Issues')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.857" endtime="20190115 18:24:42.927"></status>
+<msg timestamp="20190115 20:19:25.783" level="INFO">Clicking button '//button[@type='button'][contains(.,'Foundation Issues')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.783" endtime="20190115 20:19:25.849"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${Addition}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.927" level="INFO">Clicking button '//button[@type='button'][contains(.,'Addition')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.927" endtime="20190115 18:24:42.999"></status>
+<msg timestamp="20190115 20:19:25.849" level="INFO">Clicking button '//button[@type='button'][contains(.,'Addition')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.849" endtime="20190115 20:19:25.920"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:42.999" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:42.999" endtime="20190115 18:24:43.099"></status>
+<msg timestamp="20190115 20:19:25.920" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:25.920" endtime="20190115 20:19:26.018"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -707,23 +804,23 @@
 <arg>${BasementTypeHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:43.099" endtime="20190115 18:24:43.134"></status>
+<status status="PASS" starttime="20190115 20:19:26.018" endtime="20190115 20:19:26.049"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${16%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.152" level="INFO">Element '//div[contains(@style,'width: 16%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:43.134" endtime="20190115 18:24:43.152"></status>
+<msg timestamp="20190115 20:19:26.066" level="INFO">Element '//div[contains(@style,'width: 16%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:26.050" endtime="20190115 20:19:26.066"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${FullyFinishedButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.153" level="INFO">Clicking button '//button[@type='button'][contains(.,'Fully Finished')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.152" endtime="20190115 18:24:43.277"></status>
+<msg timestamp="20190115 20:19:26.066" level="INFO">Clicking button '//button[@type='button'][contains(.,'Fully Finished')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.066" endtime="20190115 20:19:26.182"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -731,33 +828,33 @@
 <arg>${AdditionTypeHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:43.277" endtime="20190115 18:24:43.308"></status>
+<status status="PASS" starttime="20190115 20:19:26.182" endtime="20190115 20:19:26.211"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${20%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.327" level="INFO">Element '//div[contains(@style,'width: 20%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:43.309" endtime="20190115 18:24:43.327"></status>
+<msg timestamp="20190115 20:19:26.229" level="INFO">Element '//div[contains(@style,'width: 20%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:26.211" endtime="20190115 20:19:26.230"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${PermittedAdditionButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.328" level="INFO">Clicking button '//button[@type='button'][contains(.,'Permitted')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.327" endtime="20190115 18:24:43.417"></status>
+<msg timestamp="20190115 20:19:26.230" level="INFO">Clicking button '//button[@type='button'][contains(.,'Permitted')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.230" endtime="20190115 20:19:26.313"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.418" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.417" endtime="20190115 18:24:43.522"></status>
+<msg timestamp="20190115 20:19:26.314" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.313" endtime="20190115 20:19:26.418"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:42.268" endtime="20190115 18:24:43.523"></status>
+<status status="PASS" starttime="20190115 20:19:25.218" endtime="20190115 20:19:26.418"></status>
 </kw>
 <kw name="Updates" library="Trade">
 <tags>
@@ -774,8 +871,8 @@
 <assign>
 <var>${Description}</var>
 </assign>
-<msg timestamp="20190115 18:24:43.524" level="INFO">${Description} = This is my description</msg>
-<status status="PASS" starttime="20190115 18:24:43.523" endtime="20190115 18:24:43.524"></status>
+<msg timestamp="20190115 20:19:26.419" level="INFO">${Description} = This is my description</msg>
+<status status="PASS" starttime="20190115 20:19:26.419" endtime="20190115 20:19:26.419"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns number of elements matching ``locator``.</doc>
@@ -785,15 +882,15 @@
 <assign>
 <var>${NewUpdatesButtonCount}</var>
 </assign>
-<msg timestamp="20190115 18:24:43.536" level="INFO">${NewUpdatesButtonCount} = 12</msg>
-<status status="PASS" starttime="20190115 18:24:43.524" endtime="20190115 18:24:43.536"></status>
+<msg timestamp="20190115 20:19:26.432" level="INFO">${NewUpdatesButtonCount} = 12</msg>
+<status status="PASS" starttime="20190115 20:19:26.419" endtime="20190115 20:19:26.432"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>Selecting Update Options</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:43.536" endtime="20190115 18:24:43.536"></status>
+<status status="PASS" starttime="20190115 20:19:26.433" endtime="20190115 20:19:26.433"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -801,15 +898,15 @@
 <arg>${UpdatesCopy}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:43.537" endtime="20190115 18:24:43.561"></status>
+<status status="PASS" starttime="20190115 20:19:26.433" endtime="20190115 20:19:26.456"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${24%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.581" level="INFO">Element '//div[contains(@style,'width: 24%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:43.561" endtime="20190115 18:24:43.581"></status>
+<msg timestamp="20190115 20:19:26.473" level="INFO">Element '//div[contains(@style,'width: 24%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:26.456" endtime="20190115 20:19:26.474"></status>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
@@ -817,18 +914,18 @@
 <arg>${NewUpdatesButtonCount}</arg>
 <arg>${UpdatesButtonCount}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.581" level="INFO">Argument types are:
+<msg timestamp="20190115 20:19:26.474" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:43.581" endtime="20190115 18:24:43.582"></status>
+<status status="PASS" starttime="20190115 20:19:26.474" endtime="20190115 20:19:26.474"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.582" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.582" endtime="20190115 18:24:43.668"></status>
+<msg timestamp="20190115 20:19:26.474" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.474" endtime="20190115 20:19:26.544"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -836,79 +933,79 @@
 <arg>${PleaseChooseOneValidationError}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:43.668" endtime="20190115 18:24:43.692"></status>
+<status status="PASS" starttime="20190115 20:19:26.544" endtime="20190115 20:19:26.565"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${KitchenCabinets}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.692" level="INFO">Clicking button '//button[@type='button'][contains(.,'Kitchen Cabinets')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.692" endtime="20190115 18:24:43.774"></status>
+<msg timestamp="20190115 20:19:26.566" level="INFO">Clicking button '//button[@type='button'][contains(.,'Kitchen Cabinets')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.566" endtime="20190115 20:19:26.643"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${KitchenFloor}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.774" level="INFO">Clicking button '//button[@type='button'][contains(.,'Kitchen Floor')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.774" endtime="20190115 18:24:43.851"></status>
+<msg timestamp="20190115 20:19:26.644" level="INFO">Clicking button '//button[@type='button'][contains(.,'Kitchen Floor')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.644" endtime="20190115 20:19:26.717"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${Flooring}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.852" level="INFO">Clicking button '//button[@type='button'][contains(.,'Flooring')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.852" endtime="20190115 18:24:43.927"></status>
+<msg timestamp="20190115 20:19:26.717" level="INFO">Clicking button '//button[@type='button'][contains(.,'Flooring')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.717" endtime="20190115 20:19:26.786"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${MasterBedroom}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:43.928" level="INFO">Clicking button '//button[@type='button'][contains(.,'Master Bedroom')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:43.928" endtime="20190115 18:24:44.004"></status>
+<msg timestamp="20190115 20:19:26.787" level="INFO">Clicking button '//button[@type='button'][contains(.,'Master Bedroom')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.787" endtime="20190115 20:19:26.859"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${Bathrooms}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:44.004" level="INFO">Clicking button '//button[@type='button'][contains(.,'Bathroom(s)')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:44.004" endtime="20190115 18:24:44.088"></status>
+<msg timestamp="20190115 20:19:26.860" level="INFO">Clicking button '//button[@type='button'][contains(.,'Bathroom(s)')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.860" endtime="20190115 20:19:26.927"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackyardDeck}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:44.088" level="INFO">Clicking button '//button[@type='button'][contains(.,'Backyard/Deck')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:44.088" endtime="20190115 18:24:44.165"></status>
+<msg timestamp="20190115 20:19:26.927" level="INFO">Clicking button '//button[@type='button'][contains(.,'Backyard/Deck')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:26.927" endtime="20190115 20:19:27.000"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${InterionPaint}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:44.165" level="INFO">Clicking button '//button[@type='button'][contains(.,'Interior Paint')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:44.165" endtime="20190115 18:24:44.240"></status>
+<msg timestamp="20190115 20:19:27.001" level="INFO">Clicking button '//button[@type='button'][contains(.,'Interior Paint')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:27.001" endtime="20190115 20:19:27.073"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${CounterTops}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:44.241" level="INFO">Clicking button '//button[@type='button'][contains(.,'Countertops')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:44.240" endtime="20190115 18:24:44.318"></status>
+<msg timestamp="20190115 20:19:27.074" level="INFO">Clicking button '//button[@type='button'][contains(.,'Countertops')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:27.073" endtime="20190115 20:19:27.143"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:44.319" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:44.318" endtime="20190115 18:24:44.382"></status>
+<msg timestamp="20190115 20:19:27.144" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:27.143" endtime="20190115 20:19:27.192"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -916,23 +1013,23 @@
 <arg>${DescribeUpdatesCopy}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:44.383" endtime="20190115 18:24:44.405"></status>
+<status status="PASS" starttime="20190115 20:19:27.192" endtime="20190115 20:19:27.215"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${DescribeUpdatesCopy}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:44.405" level="INFO">Clicking element '//textarea[contains(@placeholder,'Please describe the updates and when they were made.')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:44.405" endtime="20190115 18:24:44.457"></status>
+<msg timestamp="20190115 20:19:27.216" level="INFO">Clicking element '//textarea[contains(@placeholder,'Please describe the updates and when they were made.')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:27.215" endtime="20190115 20:19:27.273"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190115 18:24:45.458" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20190115 18:24:44.457" endtime="20190115 18:24:45.458"></status>
+<msg timestamp="20190115 20:19:28.273" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190115 20:19:27.273" endtime="20190115 20:19:28.274"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -940,18 +1037,18 @@
 <arg>${DescribeUpdatesCopy}</arg>
 <arg>${Description}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:45.458" level="INFO">Typing text 'This is my description' into text field '//textarea[contains(@placeholder,'Please describe the updates and when they were made.')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:45.458" endtime="20190115 18:24:45.741"></status>
+<msg timestamp="20190115 20:19:28.274" level="INFO">Typing text 'This is my description' into text field '//textarea[contains(@placeholder,'Please describe the updates and when they were made.')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:28.274" endtime="20190115 20:19:28.542"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:45.742" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:45.742" endtime="20190115 18:24:45.849"></status>
+<msg timestamp="20190115 20:19:28.542" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:28.542" endtime="20190115 20:19:28.631"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:43.523" endtime="20190115 18:24:45.849"></status>
+<status status="PASS" starttime="20190115 20:19:26.418" endtime="20190115 20:19:28.631"></status>
 </kw>
 <kw name="Need Repairs" library="Trade">
 <tags>
@@ -962,7 +1059,7 @@
 <arguments>
 <arg>Repairs or Improvements Selection</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:45.850" endtime="20190115 18:24:45.850"></status>
+<status status="PASS" starttime="20190115 20:19:28.632" endtime="20190115 20:19:28.632"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -970,31 +1067,31 @@
 <arg>${ImprovementsNeededHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:45.850" endtime="20190115 18:24:45.880"></status>
+<status status="PASS" starttime="20190115 20:19:28.633" endtime="20190115 20:19:28.660"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1</arg>
 </arguments>
-<msg timestamp="20190115 18:24:46.883" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20190115 18:24:45.880" endtime="20190115 18:24:46.883"></status>
+<msg timestamp="20190115 20:19:29.662" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20190115 20:19:28.660" endtime="20190115 20:19:29.662"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${28%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:46.902" level="INFO">Element '//div[contains(@style,'width: 28%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:46.883" endtime="20190115 18:24:46.903"></status>
+<msg timestamp="20190115 20:19:29.680" level="INFO">Element '//div[contains(@style,'width: 28%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:29.662" endtime="20190115 20:19:29.680"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NoButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:46.903" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:46.903" endtime="20190115 18:24:47.015"></status>
+<msg timestamp="20190115 20:19:29.681" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:29.680" endtime="20190115 20:19:29.788"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1002,15 +1099,15 @@
 <arg>${AgeOfRoofHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:47.015" endtime="20190115 18:24:47.045"></status>
+<status status="PASS" starttime="20190115 20:19:29.789" endtime="20190115 20:19:29.831"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:47.045" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:47.045" endtime="20190115 18:24:47.164"></status>
+<msg timestamp="20190115 20:19:29.832" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:29.831" endtime="20190115 20:19:29.943"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1018,30 +1115,30 @@
 <arg>${ImprovementsNeededHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:47.164" endtime="20190115 18:24:47.189"></status>
+<status status="PASS" starttime="20190115 20:19:29.943" endtime="20190115 20:19:29.966"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${YesButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:47.189" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:47.189" endtime="20190115 18:24:47.268"></status>
+<msg timestamp="20190115 20:19:29.966" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:29.966" endtime="20190115 20:19:30.051"></status>
 </kw>
 <kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <doc>Takes screenshot of the current page and embeds it into log file.</doc>
-<msg timestamp="20190115 18:24:47.716" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-49.png"&gt;&lt;img src="selenium-screenshot-49.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:47.269" endtime="20190115 18:24:47.716"></status>
+<msg timestamp="20190115 20:19:30.494" level="INFO" html="yes">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-102.png"&gt;&lt;img src="selenium-screenshot-102.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20190115 20:19:30.051" endtime="20190115 20:19:30.495"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NoButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:47.717" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:47.716" endtime="20190115 18:24:47.819"></status>
+<msg timestamp="20190115 20:19:30.495" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:30.495" endtime="20190115 20:19:30.602"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:45.849" endtime="20190115 18:24:47.819"></status>
+<status status="PASS" starttime="20190115 20:19:28.632" endtime="20190115 20:19:30.602"></status>
 </kw>
 <kw name="Age of Roof" library="Trade">
 <tags>
@@ -1052,7 +1149,7 @@
 <arguments>
 <arg>How old is your roof</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:47.820" endtime="20190115 18:24:47.820"></status>
+<status status="PASS" starttime="20190115 20:19:30.603" endtime="20190115 20:19:30.603"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1060,23 +1157,23 @@
 <arg>${AgeOfRoofHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:47.821" endtime="20190115 18:24:47.846"></status>
+<status status="PASS" starttime="20190115 20:19:30.603" endtime="20190115 20:19:30.623"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${32%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:47.865" level="INFO">Element '//div[contains(@style,'width: 32%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:47.846" endtime="20190115 18:24:47.865"></status>
+<msg timestamp="20190115 20:19:30.642" level="INFO">Element '//div[contains(@style,'width: 32%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:30.623" endtime="20190115 20:19:30.642"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${LessThanFiveBTN}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:47.866" level="INFO">Clicking button '//button[@type='button'][contains(.,'Less Than 5 Years')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:47.866" endtime="20190115 18:24:47.988"></status>
+<msg timestamp="20190115 20:19:30.643" level="INFO">Clicking button '//button[@type='button'][contains(.,'Less Than 5 Years')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:30.642" endtime="20190115 20:19:30.749"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1084,9 +1181,9 @@
 <arg>${HotWaterHeaterHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:47.988" endtime="20190115 18:24:48.013"></status>
+<status status="PASS" starttime="20190115 20:19:30.749" endtime="20190115 20:19:30.776"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:47.820" endtime="20190115 18:24:48.013"></status>
+<status status="PASS" starttime="20190115 20:19:30.602" endtime="20190115 20:19:30.776"></status>
 </kw>
 <kw name="Age of Water Heater" library="Trade">
 <tags>
@@ -1097,7 +1194,7 @@
 <arguments>
 <arg>How old is you Water Heater</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.013" endtime="20190115 18:24:48.014"></status>
+<status status="PASS" starttime="20190115 20:19:30.777" endtime="20190115 20:19:30.777"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1105,23 +1202,23 @@
 <arg>${HotWaterHeaterHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.014" endtime="20190115 18:24:48.026"></status>
+<status status="PASS" starttime="20190115 20:19:30.777" endtime="20190115 20:19:30.790"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${36%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.048" level="INFO">Element '//div[contains(@style,'width: 36%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:48.027" endtime="20190115 18:24:48.049"></status>
+<msg timestamp="20190115 20:19:30.807" level="INFO">Element '//div[contains(@style,'width: 36%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:30.790" endtime="20190115 20:19:30.808"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${FiveNineBTN}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.049" level="INFO">Clicking button '//button[@type='button'][contains(.,'5-9 Years')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:48.049" endtime="20190115 18:24:48.177"></status>
+<msg timestamp="20190115 20:19:30.808" level="INFO">Clicking button '//button[@type='button'][contains(.,'5-9 Years')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:30.808" endtime="20190115 20:19:30.912"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1129,9 +1226,9 @@
 <arg>${HVACHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.178" endtime="20190115 18:24:48.200"></status>
+<status status="PASS" starttime="20190115 20:19:30.912" endtime="20190115 20:19:30.936"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:48.013" endtime="20190115 18:24:48.200"></status>
+<status status="PASS" starttime="20190115 20:19:30.776" endtime="20190115 20:19:30.936"></status>
 </kw>
 <kw name="Age of HVAC" library="Trade">
 <tags>
@@ -1142,7 +1239,7 @@
 <arguments>
 <arg>How old is your HVAC system</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.201" endtime="20190115 18:24:48.201"></status>
+<status status="PASS" starttime="20190115 20:19:30.937" endtime="20190115 20:19:30.937"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1150,23 +1247,23 @@
 <arg>${HVACHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.202" endtime="20190115 18:24:48.214"></status>
+<status status="PASS" starttime="20190115 20:19:30.937" endtime="20190115 20:19:30.949"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${40%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.237" level="INFO">Element '//div[contains(@style,'width: 40%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:48.214" endtime="20190115 18:24:48.238"></status>
+<msg timestamp="20190115 20:19:30.968" level="INFO">Element '//div[contains(@style,'width: 40%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:30.949" endtime="20190115 20:19:30.968"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${TenMoreBTN}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.238" level="INFO">Clicking button '//button[@type='button'][contains(.,'10+ Years')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:48.238" endtime="20190115 18:24:48.414"></status>
+<msg timestamp="20190115 20:19:30.968" level="INFO">Clicking button '//button[@type='button'][contains(.,'10+ Years')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:30.968" endtime="20190115 20:19:31.148"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1174,9 +1271,9 @@
 <arg>${KitchenApplianceHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.414" endtime="20190115 18:24:48.442"></status>
+<status status="PASS" starttime="20190115 20:19:31.149" endtime="20190115 20:19:31.173"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:48.201" endtime="20190115 18:24:48.442"></status>
+<status status="PASS" starttime="20190115 20:19:30.936" endtime="20190115 20:19:31.173"></status>
 </kw>
 <kw name="Kitchen Appliances" library="Trade">
 <tags>
@@ -1187,7 +1284,7 @@
 <arguments>
 <arg>What kind of Kitchen Appliances</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.443" endtime="20190115 18:24:48.443"></status>
+<status status="PASS" starttime="20190115 20:19:31.174" endtime="20190115 20:19:31.174"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1195,23 +1292,23 @@
 <arg>${KitchenApplianceHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.443" endtime="20190115 18:24:48.455"></status>
+<status status="PASS" starttime="20190115 20:19:31.174" endtime="20190115 20:19:31.187"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${44%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.474" level="INFO">Element '//div[contains(@style,'width: 44%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:48.456" endtime="20190115 18:24:48.474"></status>
+<msg timestamp="20190115 20:19:31.204" level="INFO">Element '//div[contains(@style,'width: 44%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:31.187" endtime="20190115 20:19:31.204"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${StainlessSteel}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.475" level="INFO">Clicking button '//button[@type='button'][contains(.,'Stainless Steel')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:48.475" endtime="20190115 18:24:48.672"></status>
+<msg timestamp="20190115 20:19:31.205" level="INFO">Clicking button '//button[@type='button'][contains(.,'Stainless Steel')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:31.204" endtime="20190115 20:19:31.401"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1219,9 +1316,9 @@
 <arg>${CeilingsHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.673" endtime="20190115 18:24:48.696"></status>
+<status status="PASS" starttime="20190115 20:19:31.401" endtime="20190115 20:19:31.426"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:48.442" endtime="20190115 18:24:48.696"></status>
+<status status="PASS" starttime="20190115 20:19:31.173" endtime="20190115 20:19:31.427"></status>
 </kw>
 <kw name="Ceilings" library="Trade">
 <tags>
@@ -1232,7 +1329,7 @@
 <arguments>
 <arg>What type of Ceilings</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.697" endtime="20190115 18:24:48.697"></status>
+<status status="PASS" starttime="20190115 20:19:31.427" endtime="20190115 20:19:31.427"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1240,23 +1337,23 @@
 <arg>${CeilingsHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.697" endtime="20190115 18:24:48.709"></status>
+<status status="PASS" starttime="20190115 20:19:31.427" endtime="20190115 20:19:31.440"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${48%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.729" level="INFO">Element '//div[contains(@style,'width: 48%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:48.710" endtime="20190115 18:24:48.729"></status>
+<msg timestamp="20190115 20:19:31.458" level="INFO">Element '//div[contains(@style,'width: 48%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:31.440" endtime="20190115 20:19:31.458"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${PopcornCeilingButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:48.730" level="INFO">Clicking button '//button[@type='button'][contains(.,'Popcorn')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:48.729" endtime="20190115 18:24:48.943"></status>
+<msg timestamp="20190115 20:19:31.458" level="INFO">Clicking button '//button[@type='button'][contains(.,'Popcorn')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:31.458" endtime="20190115 20:19:31.656"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1264,9 +1361,9 @@
 <arg>${FlooringHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.943" endtime="20190115 18:24:48.971"></status>
+<status status="PASS" starttime="20190115 20:19:31.656" endtime="20190115 20:19:31.685"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:48.696" endtime="20190115 18:24:48.971"></status>
+<status status="PASS" starttime="20190115 20:19:31.427" endtime="20190115 20:19:31.685"></status>
 </kw>
 <kw name="Mail Level Floors" library="Trade">
 <tags>
@@ -1277,7 +1374,7 @@
 <arguments>
 <arg>What type of Floors</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.972" endtime="20190115 18:24:48.972"></status>
+<status status="PASS" starttime="20190115 20:19:31.685" endtime="20190115 20:19:31.686"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1285,15 +1382,15 @@
 <arg>${FlooringHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:48.972" endtime="20190115 18:24:48.985"></status>
+<status status="PASS" starttime="20190115 20:19:31.686" endtime="20190115 20:19:31.698"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${52%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.004" level="INFO">Element '//div[contains(@style,'width: 52%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:48.985" endtime="20190115 18:24:49.004"></status>
+<msg timestamp="20190115 20:19:31.714" level="INFO">Element '//div[contains(@style,'width: 52%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:31.698" endtime="20190115 20:19:31.715"></status>
 </kw>
 <kw name="Get Element Count" library="SeleniumLibrary">
 <doc>Returns number of elements matching ``locator``.</doc>
@@ -1303,8 +1400,8 @@
 <assign>
 <var>${NewMLFoorsButtonCount}</var>
 </assign>
-<msg timestamp="20190115 18:24:49.011" level="INFO">${NewMLFoorsButtonCount} = 7</msg>
-<status status="PASS" starttime="20190115 18:24:49.005" endtime="20190115 18:24:49.011"></status>
+<msg timestamp="20190115 20:19:31.721" level="INFO">${NewMLFoorsButtonCount} = 7</msg>
+<status status="PASS" starttime="20190115 20:19:31.715" endtime="20190115 20:19:31.721"></status>
 </kw>
 <kw name="Should Be Equal As Numbers" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to real numbers.</doc>
@@ -1312,58 +1409,58 @@
 <arg>${NewMLFoorsButtonCount}</arg>
 <arg>${MLFoorsButtonCount}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.011" level="INFO">Argument types are:
+<msg timestamp="20190115 20:19:31.722" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190115 18:24:49.011" endtime="20190115 18:24:49.011"></status>
+<status status="PASS" starttime="20190115 20:19:31.721" endtime="20190115 20:19:31.722"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${HardWoodBtn}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.012" level="INFO">Clicking button '//button[@type='button'][contains(.,'Hardwood')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.011" endtime="20190115 18:24:49.081"></status>
+<msg timestamp="20190115 20:19:31.722" level="INFO">Clicking button '//button[@type='button'][contains(.,'Hardwood')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:31.722" endtime="20190115 20:19:31.797"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${TileBtn}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.081" level="INFO">Clicking button '//button[@type='button'][contains(.,'Tile')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.081" endtime="20190115 18:24:49.152"></status>
+<msg timestamp="20190115 20:19:31.798" level="INFO">Clicking button '//button[@type='button'][contains(.,'Tile')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:31.798" endtime="20190115 20:19:31.878"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${LaminatedBtn}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.153" level="INFO">Clicking button '//button[@type='button'][contains(.,'Laminated')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.152" endtime="20190115 18:24:49.228"></status>
+<msg timestamp="20190115 20:19:31.878" level="INFO">Clicking button '//button[@type='button'][contains(.,'Laminated')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:31.878" endtime="20190115 20:19:31.945"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${CarpetBtn}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.229" level="INFO">Clicking button '//button[@type='button'][contains(.,'Carpet')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.229" endtime="20190115 18:24:49.324"></status>
+<msg timestamp="20190115 20:19:31.945" level="INFO">Clicking button '//button[@type='button'][contains(.,'Carpet')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:31.945" endtime="20190115 20:19:32.009"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${OtherBth}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.324" level="INFO">Clicking button '//button[@type='button'][contains(.,'Other')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.324" endtime="20190115 18:24:49.393"></status>
+<msg timestamp="20190115 20:19:32.009" level="INFO">Clicking button '//button[@type='button'][contains(.,'Other')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.009" endtime="20190115 20:19:32.076"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.393" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.393" endtime="20190115 18:24:49.583"></status>
+<msg timestamp="20190115 20:19:32.076" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.076" endtime="20190115 20:19:32.267"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1371,9 +1468,9 @@
 <arg>${LookingToSellTimeHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:49.583" endtime="20190115 18:24:49.609"></status>
+<status status="PASS" starttime="20190115 20:19:32.267" endtime="20190115 20:19:32.292"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:48.971" endtime="20190115 18:24:49.609"></status>
+<status status="PASS" starttime="20190115 20:19:31.685" endtime="20190115 20:19:32.292"></status>
 </kw>
 <kw name="Buy/Sell" library="Trade">
 <tags>
@@ -1384,7 +1481,7 @@
 <arguments>
 <arg>Are you Buying or Selling</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:49.610" endtime="20190115 18:24:49.610"></status>
+<status status="PASS" starttime="20190115 20:19:32.293" endtime="20190115 20:19:32.293"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1392,23 +1489,23 @@
 <arg>${LookingToSellTimeHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:49.610" endtime="20190115 18:24:49.623"></status>
+<status status="PASS" starttime="20190115 20:19:32.293" endtime="20190115 20:19:32.306"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${56%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.641" level="INFO">Element '//div[contains(@style,'width: 56%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:49.623" endtime="20190115 18:24:49.641"></status>
+<msg timestamp="20190115 20:19:32.323" level="INFO">Element '//div[contains(@style,'width: 56%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:32.306" endtime="20190115 20:19:32.323"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${ASAPBtn}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.641" level="INFO">Clicking button '//button[@type='button'][contains(.,'ASAP')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.641" endtime="20190115 18:24:49.844"></status>
+<msg timestamp="20190115 20:19:32.323" level="INFO">Clicking button '//button[@type='button'][contains(.,'ASAP')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.323" endtime="20190115 20:19:32.540"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1416,9 +1513,9 @@
 <arg>${HomeWorthHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:49.844" endtime="20190115 18:24:49.868"></status>
+<status status="PASS" starttime="20190115 20:19:32.541" endtime="20190115 20:19:32.572"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:49.609" endtime="20190115 18:24:49.868"></status>
+<status status="PASS" starttime="20190115 20:19:32.293" endtime="20190115 20:19:32.573"></status>
 </kw>
 <kw name="Home Worth" library="Trade">
 <tags>
@@ -1435,15 +1532,15 @@
 <assign>
 <var>${HomeWorth}</var>
 </assign>
-<msg timestamp="20190115 18:24:49.869" level="INFO">${HomeWorth} = 350000</msg>
-<status status="PASS" starttime="20190115 18:24:49.868" endtime="20190115 18:24:49.869"></status>
+<msg timestamp="20190115 20:19:32.574" level="INFO">${HomeWorth} = 350000</msg>
+<status status="PASS" starttime="20190115 20:19:32.573" endtime="20190115 20:19:32.574"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>What is your home worth</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:49.869" endtime="20190115 18:24:49.869"></status>
+<status status="PASS" starttime="20190115 20:19:32.574" endtime="20190115 20:19:32.574"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1451,23 +1548,23 @@
 <arg>${HomeWorthHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:49.869" endtime="20190115 18:24:49.882"></status>
+<status status="PASS" starttime="20190115 20:19:32.574" endtime="20190115 20:19:32.587"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${60%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.899" level="INFO">Element '//div[contains(@style,'width: 60%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:49.882" endtime="20190115 18:24:49.899"></status>
+<msg timestamp="20190115 20:19:32.604" level="INFO">Element '//div[contains(@style,'width: 60%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:32.587" endtime="20190115 20:19:32.604"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${HomeWorthText}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.900" level="INFO">Clicking element '//input[contains(@type,'tel')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.900" endtime="20190115 18:24:49.958"></status>
+<msg timestamp="20190115 20:19:32.605" level="INFO">Clicking element '//input[contains(@type,'tel')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.605" endtime="20190115 20:19:32.656"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -1475,16 +1572,16 @@
 <arg>${HomeWorthText}</arg>
 <arg>${HomeWorth}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:49.959" level="INFO">Typing text '350000' into text field '//input[contains(@type,'tel')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:49.959" endtime="20190115 18:24:50.073"></status>
+<msg timestamp="20190115 20:19:32.657" level="INFO">Typing text '350000' into text field '//input[contains(@type,'tel')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.656" endtime="20190115 20:19:32.755"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:50.073" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:50.073" endtime="20190115 18:24:50.273"></status>
+<msg timestamp="20190115 20:19:32.756" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.755" endtime="20190115 20:19:32.941"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1492,9 +1589,9 @@
 <arg>${CurrentlyOnMarketHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:50.273" endtime="20190115 18:24:50.300"></status>
+<status status="PASS" starttime="20190115 20:19:32.941" endtime="20190115 20:19:32.967"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:49.868" endtime="20190115 18:24:50.300"></status>
+<status status="PASS" starttime="20190115 20:19:32.573" endtime="20190115 20:19:32.967"></status>
 </kw>
 <kw name="Currently on the Market" library="Trade">
 <tags>
@@ -1511,15 +1608,15 @@
 <assign>
 <var>${MSituation}</var>
 </assign>
-<msg timestamp="20190115 18:24:50.301" level="INFO">${MSituation} = This is my Situation</msg>
-<status status="PASS" starttime="20190115 18:24:50.301" endtime="20190115 18:24:50.301"></status>
+<msg timestamp="20190115 20:19:32.968" level="INFO">${MSituation} = This is my Situation</msg>
+<status status="PASS" starttime="20190115 20:19:32.968" endtime="20190115 20:19:32.968"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>Is you home currently on the market</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:50.301" endtime="20190115 18:24:50.301"></status>
+<status status="PASS" starttime="20190115 20:19:32.968" endtime="20190115 20:19:32.969"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1527,23 +1624,23 @@
 <arg>${CurrentlyOnMarketHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:50.302" endtime="20190115 18:24:50.314"></status>
+<status status="PASS" starttime="20190115 20:19:32.969" endtime="20190115 20:19:32.981"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${64%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:50.332" level="INFO">Element '//div[contains(@style,'width: 64%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:50.315" endtime="20190115 18:24:50.333"></status>
+<msg timestamp="20190115 20:19:32.999" level="INFO">Element '//div[contains(@style,'width: 64%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:32.981" endtime="20190115 20:19:32.999"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${YesButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:50.333" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:50.333" endtime="20190115 18:24:50.521"></status>
+<msg timestamp="20190115 20:19:32.999" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:32.999" endtime="20190115 20:19:33.194"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1551,15 +1648,15 @@
 <arg>${AgentYesValidationText}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:50.521" endtime="20190115 18:24:50.550"></status>
+<status status="PASS" starttime="20190115 20:19:33.194" endtime="20190115 20:19:33.221"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${SituationTextField}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:50.551" level="INFO">Clicking element '//textarea[contains(@placeholder,'Tell us about your situation')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:50.550" endtime="20190115 18:24:50.609"></status>
+<msg timestamp="20190115 20:19:33.221" level="INFO">Clicking element '//textarea[contains(@placeholder,'Tell us about your situation')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:33.221" endtime="20190115 20:19:33.269"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -1567,8 +1664,8 @@
 <arg>${SituationTextField}</arg>
 <arg>${MSituation}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:50.609" level="INFO">Typing text 'This is my Situation' into text field '//textarea[contains(@placeholder,'Tell us about your situation')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:50.609" endtime="20190115 18:24:50.828"></status>
+<msg timestamp="20190115 20:19:33.270" level="INFO">Typing text 'This is my Situation' into text field '//textarea[contains(@placeholder,'Tell us about your situation')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:33.270" endtime="20190115 20:19:33.471"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1576,15 +1673,15 @@
 <arg>${NextButton}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:50.828" endtime="20190115 18:24:50.847"></status>
+<status status="PASS" starttime="20190115 20:19:33.471" endtime="20190115 20:19:33.488"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:50.848" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:50.847" endtime="20190115 18:24:51.051"></status>
+<msg timestamp="20190115 20:19:33.488" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:33.488" endtime="20190115 20:19:33.673"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1592,15 +1689,15 @@
 <arg>${LookingToBuyHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.051" endtime="20190115 18:24:51.078"></status>
+<status status="PASS" starttime="20190115 20:19:33.673" endtime="20190115 20:19:33.698"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:51.078" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:51.078" endtime="20190115 18:24:51.188"></status>
+<msg timestamp="20190115 20:19:33.698" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:33.698" endtime="20190115 20:19:33.810"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1608,15 +1705,15 @@
 <arg>${AgentYesValidationText}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.188" endtime="20190115 18:24:51.261"></status>
+<status status="PASS" starttime="20190115 20:19:33.811" endtime="20190115 20:19:33.882"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:51.262" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:51.261" endtime="20190115 18:24:51.369"></status>
+<msg timestamp="20190115 20:19:33.883" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:33.882" endtime="20190115 20:19:33.981"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1624,15 +1721,15 @@
 <arg>${CurrentlyOnMarketHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.369" endtime="20190115 18:24:51.452"></status>
+<status status="PASS" starttime="20190115 20:19:33.981" endtime="20190115 20:19:34.051"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NoButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:51.453" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:51.453" endtime="20190115 18:24:51.663"></status>
+<msg timestamp="20190115 20:19:34.052" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:34.051" endtime="20190115 20:19:34.245"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1640,9 +1737,9 @@
 <arg>${LookingToBuyHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.663" endtime="20190115 18:24:51.678"></status>
+<status status="PASS" starttime="20190115 20:19:34.245" endtime="20190115 20:19:34.260"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:50.300" endtime="20190115 18:24:51.678"></status>
+<status status="PASS" starttime="20190115 20:19:32.967" endtime="20190115 20:19:34.261"></status>
 </kw>
 <kw name="Looking to buy" library="Trade">
 <tags>
@@ -1653,7 +1750,7 @@
 <arguments>
 <arg>Are you looking to buy a home</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.679" endtime="20190115 18:24:51.679"></status>
+<status status="PASS" starttime="20190115 20:19:34.261" endtime="20190115 20:19:34.262"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1661,23 +1758,23 @@
 <arg>${LookingToBuyHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.679" endtime="20190115 18:24:51.692"></status>
+<status status="PASS" starttime="20190115 20:19:34.262" endtime="20190115 20:19:34.274"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${72%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:51.709" level="INFO">Element '//div[contains(@style,'width: 72%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:51.692" endtime="20190115 18:24:51.709"></status>
+<msg timestamp="20190115 20:19:34.291" level="INFO">Element '//div[contains(@style,'width: 72%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:34.274" endtime="20190115 20:19:34.291"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NoButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:51.710" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:51.709" endtime="20190115 18:24:51.888"></status>
+<msg timestamp="20190115 20:19:34.291" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:34.291" endtime="20190115 20:19:34.467"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1685,15 +1782,15 @@
 <arg>${HowDidYouHearHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:51.888" endtime="20190115 18:24:51.911"></status>
+<status status="PASS" starttime="20190115 20:19:34.467" endtime="20190115 20:19:34.494"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:51.912" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:51.911" endtime="20190115 18:24:52.028"></status>
+<msg timestamp="20190115 20:19:34.495" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:34.494" endtime="20190115 20:19:34.602"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1701,15 +1798,15 @@
 <arg>${LookingToBuyHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.028" endtime="20190115 18:24:52.113"></status>
+<status status="PASS" starttime="20190115 20:19:34.602" endtime="20190115 20:19:34.675"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${YesButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:52.113" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:52.113" endtime="20190115 18:24:52.308"></status>
+<msg timestamp="20190115 20:19:34.676" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:34.676" endtime="20190115 20:19:34.867"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1717,9 +1814,9 @@
 <arg>${HaveYouFoundHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.308" endtime="20190115 18:24:52.328"></status>
+<status status="PASS" starttime="20190115 20:19:34.867" endtime="20190115 20:19:34.891"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:51.678" endtime="20190115 18:24:52.328"></status>
+<status status="PASS" starttime="20190115 20:19:34.261" endtime="20190115 20:19:34.891"></status>
 </kw>
 <kw name="Have you Found" library="Trade">
 <tags>
@@ -1730,7 +1827,7 @@
 <arguments>
 <arg>Have you found a new house</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.329" endtime="20190115 18:24:52.329"></status>
+<status status="PASS" starttime="20190115 20:19:34.892" endtime="20190115 20:19:34.892"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1738,23 +1835,23 @@
 <arg>${HaveYouFoundHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.329" endtime="20190115 18:24:52.341"></status>
+<status status="PASS" starttime="20190115 20:19:34.892" endtime="20190115 20:19:34.904"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${76%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:52.362" level="INFO">Element '//div[contains(@style,'width: 76%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:52.342" endtime="20190115 18:24:52.362"></status>
+<msg timestamp="20190115 20:19:34.922" level="INFO">Element '//div[contains(@style,'width: 76%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:34.905" endtime="20190115 20:19:34.922"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${YesButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:52.362" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:52.362" endtime="20190115 18:24:52.535"></status>
+<msg timestamp="20190115 20:19:34.923" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:34.923" endtime="20190115 20:19:35.109"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1762,15 +1859,15 @@
 <arg>${WorkingWithAnotherAgent}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.535" endtime="20190115 18:24:52.558"></status>
+<status status="PASS" starttime="20190115 20:19:35.109" endtime="20190115 20:19:35.127"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:52.558" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:52.558" endtime="20190115 18:24:52.669"></status>
+<msg timestamp="20190115 20:19:35.128" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:35.127" endtime="20190115 20:19:35.235"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1778,15 +1875,15 @@
 <arg>${HaveYouFoundHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.669" endtime="20190115 18:24:52.735"></status>
+<status status="PASS" starttime="20190115 20:19:35.235" endtime="20190115 20:19:35.301"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NoButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:52.735" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:52.735" endtime="20190115 18:24:52.940"></status>
+<msg timestamp="20190115 20:19:35.301" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:35.301" endtime="20190115 20:19:35.504"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1794,25 +1891,25 @@
 <arg>${WorkingWithAnotherAgent}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:52.941" endtime="20190115 18:24:52.956"></status>
+<status status="PASS" starttime="20190115 20:19:35.504" endtime="20190115 20:19:35.521"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:52.956" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:52.956" endtime="20190115 18:24:53.055"></status>
+<msg timestamp="20190115 20:19:35.521" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:35.521" endtime="20190115 20:19:35.617"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${YesButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.056" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:53.056" endtime="20190115 18:24:53.308"></status>
+<msg timestamp="20190115 20:19:35.617" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:35.617" endtime="20190115 20:19:35.851"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:52.328" endtime="20190115 18:24:53.308"></status>
+<status status="PASS" starttime="20190115 20:19:34.891" endtime="20190115 20:19:35.851"></status>
 </kw>
 <kw name="Working with another Agent?" library="Trade">
 <tags>
@@ -1823,7 +1920,7 @@
 <arguments>
 <arg>Are you working with another Agent</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.309" endtime="20190115 18:24:53.309"></status>
+<status status="PASS" starttime="20190115 20:19:35.852" endtime="20190115 20:19:35.852"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1831,23 +1928,23 @@
 <arg>${WorkingWithAnotherAgent}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.309" endtime="20190115 18:24:53.325"></status>
+<status status="PASS" starttime="20190115 20:19:35.852" endtime="20190115 20:19:35.867"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${80%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.343" level="INFO">Element '//div[contains(@style,'width: 80%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:53.325" endtime="20190115 18:24:53.343"></status>
+<msg timestamp="20190115 20:19:35.884" level="INFO">Element '//div[contains(@style,'width: 80%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:35.867" endtime="20190115 20:19:35.885"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${YesButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.343" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:53.343" endtime="20190115 18:24:53.523"></status>
+<msg timestamp="20190115 20:19:35.885" level="INFO">Clicking button '//button[@type='button'][contains(.,'Yes')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:35.885" endtime="20190115 20:19:36.068"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1855,15 +1952,15 @@
 <arg>${HowDidYouHearHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.523" endtime="20190115 18:24:53.544"></status>
+<status status="PASS" starttime="20190115 20:19:36.068" endtime="20190115 20:19:36.089"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${BackButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.545" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:53.544" endtime="20190115 18:24:53.659"></status>
+<msg timestamp="20190115 20:19:36.090" level="INFO">Clicking button '//button[@type='button'][contains(.,'Back')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.090" endtime="20190115 20:19:36.203"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1871,15 +1968,15 @@
 <arg>${WorkingWithAnotherAgent}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.659" endtime="20190115 18:24:53.731"></status>
+<status status="PASS" starttime="20190115 20:19:36.203" endtime="20190115 20:19:36.281"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NoButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.732" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:53.731" endtime="20190115 18:24:53.941"></status>
+<msg timestamp="20190115 20:19:36.282" level="INFO">Clicking button '//button[@type='button'][contains(.,'No')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.282" endtime="20190115 20:19:36.467"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1887,9 +1984,9 @@
 <arg>${HowDidYouHearHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.941" endtime="20190115 18:24:53.962"></status>
+<status status="PASS" starttime="20190115 20:19:36.467" endtime="20190115 20:19:36.488"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:53.309" endtime="20190115 18:24:53.962"></status>
+<status status="PASS" starttime="20190115 20:19:35.851" endtime="20190115 20:19:36.488"></status>
 </kw>
 <kw name="How did you hear" library="Trade">
 <tags>
@@ -1900,7 +1997,7 @@
 <arguments>
 <arg>How did you hear about Knock</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.963" endtime="20190115 18:24:53.963"></status>
+<status status="PASS" starttime="20190115 20:19:36.488" endtime="20190115 20:19:36.488"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1908,23 +2005,23 @@
 <arg>${HowDidYouHearHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:53.963" endtime="20190115 18:24:53.976"></status>
+<status status="PASS" starttime="20190115 20:19:36.489" endtime="20190115 20:19:36.500"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${84%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.994" level="INFO">Element '//div[contains(@style,'width: 84%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:53.976" endtime="20190115 18:24:53.994"></status>
+<msg timestamp="20190115 20:19:36.518" level="INFO">Element '//div[contains(@style,'width: 84%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:36.500" endtime="20190115 20:19:36.518"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${TVSegmentBtn}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:53.995" level="INFO">Clicking button '//button[@type='button'][contains(.,'TV Segment')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:53.995" endtime="20190115 18:24:54.222"></status>
+<msg timestamp="20190115 20:19:36.519" level="INFO">Clicking button '//button[@type='button'][contains(.,'TV Segment')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.518" endtime="20190115 20:19:36.721"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1932,9 +2029,9 @@
 <arg>${EnterNameHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:54.222" endtime="20190115 18:24:54.246"></status>
+<status status="PASS" starttime="20190115 20:19:36.721" endtime="20190115 20:19:36.748"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:53.962" endtime="20190115 18:24:54.246"></status>
+<status status="PASS" starttime="20190115 20:19:36.488" endtime="20190115 20:19:36.748"></status>
 </kw>
 <kw name="Enter Name" library="Trade">
 <tags>
@@ -1952,8 +2049,8 @@
 <assign>
 <var>${FirstName}</var>
 </assign>
-<msg timestamp="20190115 18:24:54.247" level="INFO">${FirstName} = Tom</msg>
-<status status="PASS" starttime="20190115 18:24:54.247" endtime="20190115 18:24:54.247"></status>
+<msg timestamp="20190115 20:19:36.749" level="INFO">${FirstName} = Tom</msg>
+<status status="PASS" starttime="20190115 20:19:36.748" endtime="20190115 20:19:36.749"></status>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <doc>Returns the given values which can then be assigned to a variables.</doc>
@@ -1963,15 +2060,15 @@
 <assign>
 <var>${LastName}</var>
 </assign>
-<msg timestamp="20190115 18:24:54.247" level="INFO">${LastName} = Jones</msg>
-<status status="PASS" starttime="20190115 18:24:54.247" endtime="20190115 18:24:54.247"></status>
+<msg timestamp="20190115 20:19:36.749" level="INFO">${LastName} = Jones</msg>
+<status status="PASS" starttime="20190115 20:19:36.749" endtime="20190115 20:19:36.749"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>First and Last Name Entry</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:54.248" endtime="20190115 18:24:54.248"></status>
+<status status="PASS" starttime="20190115 20:19:36.749" endtime="20190115 20:19:36.749"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -1979,23 +2076,23 @@
 <arg>${EnterNameHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:54.248" endtime="20190115 18:24:54.260"></status>
+<status status="PASS" starttime="20190115 20:19:36.749" endtime="20190115 20:19:36.761"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${92%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.279" level="INFO">Element '//div[contains(@style,'width: 92%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:54.261" endtime="20190115 18:24:54.280"></status>
+<msg timestamp="20190115 20:19:36.779" level="INFO">Element '//div[contains(@style,'width: 92%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:36.761" endtime="20190115 20:19:36.779"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${FirstNameField}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.280" level="INFO">Clicking element '//input[contains(@placeholder,'Your First Name')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.280" endtime="20190115 18:24:54.342"></status>
+<msg timestamp="20190115 20:19:36.780" level="INFO">Clicking element '//input[contains(@placeholder,'Your First Name')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.779" endtime="20190115 20:19:36.842"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -2003,16 +2100,16 @@
 <arg>${FirstNameField}</arg>
 <arg>${FirstName}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.343" level="INFO">Typing text 'Tom' into text field '//input[contains(@placeholder,'Your First Name')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.342" endtime="20190115 18:24:54.424"></status>
+<msg timestamp="20190115 20:19:36.842" level="INFO">Typing text 'Tom' into text field '//input[contains(@placeholder,'Your First Name')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.842" endtime="20190115 20:19:36.922"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${LastNameField}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.425" level="INFO">Clicking element '//input[contains(@placeholder,'Your Last Name')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.424" endtime="20190115 18:24:54.486"></status>
+<msg timestamp="20190115 20:19:36.923" level="INFO">Clicking element '//input[contains(@placeholder,'Your Last Name')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.923" endtime="20190115 20:19:36.980"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -2020,16 +2117,16 @@
 <arg>${LastNameField}</arg>
 <arg>${LastName}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.487" level="INFO">Typing text 'Jones' into text field '//input[contains(@placeholder,'Your Last Name')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.486" endtime="20190115 18:24:54.613"></status>
+<msg timestamp="20190115 20:19:36.981" level="INFO">Typing text 'Jones' into text field '//input[contains(@placeholder,'Your Last Name')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:36.981" endtime="20190115 20:19:37.098"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.613" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.613" endtime="20190115 18:24:54.840"></status>
+<msg timestamp="20190115 20:19:37.098" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:37.098" endtime="20190115 20:19:37.326"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -2037,9 +2134,9 @@
 <arg>${EstimateHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:54.840" endtime="20190115 18:24:54.864"></status>
+<status status="PASS" starttime="20190115 20:19:37.327" endtime="20190115 20:19:37.351"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:54.246" endtime="20190115 18:24:54.864"></status>
+<status status="PASS" starttime="20190115 20:19:36.748" endtime="20190115 20:19:37.351"></status>
 </kw>
 <kw name="Enter Your Email" library="Trade">
 <tags>
@@ -2056,15 +2153,15 @@
 <assign>
 <var>${EmailAddress}</var>
 </assign>
-<msg timestamp="20190115 18:24:54.865" level="INFO">${EmailAddress} = tester@test.com</msg>
-<status status="PASS" starttime="20190115 18:24:54.865" endtime="20190115 18:24:54.865"></status>
+<msg timestamp="20190115 20:19:37.352" level="INFO">${EmailAddress} = tester@test.com</msg>
+<status status="PASS" starttime="20190115 20:19:37.352" endtime="20190115 20:19:37.352"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>Enter an Email Address</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:54.865" endtime="20190115 18:24:54.866"></status>
+<status status="PASS" starttime="20190115 20:19:37.352" endtime="20190115 20:19:37.352"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -2072,23 +2169,23 @@
 <arg>${EstimateHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:54.866" endtime="20190115 18:24:54.880"></status>
+<status status="PASS" starttime="20190115 20:19:37.352" endtime="20190115 20:19:37.365"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${96%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.898" level="INFO">Element '//div[contains(@style,'width: 96%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:54.880" endtime="20190115 18:24:54.898"></status>
+<msg timestamp="20190115 20:19:37.381" level="INFO">Element '//div[contains(@style,'width: 96%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:37.365" endtime="20190115 20:19:37.381"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${EmailTextField}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.898" level="INFO">Clicking element '//input[@type='email']'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.898" endtime="20190115 18:24:54.962"></status>
+<msg timestamp="20190115 20:19:37.382" level="INFO">Clicking element '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20190115 20:19:37.381" endtime="20190115 20:19:37.439"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -2096,18 +2193,18 @@
 <arg>${EmailTextField}</arg>
 <arg>${EmailAddress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:54.962" level="INFO">Typing text 'tester@test.com' into text field '//input[@type='email']'.</msg>
-<status status="PASS" starttime="20190115 18:24:54.962" endtime="20190115 18:24:55.302"></status>
+<msg timestamp="20190115 20:19:37.439" level="INFO">Typing text 'tester@test.com' into text field '//input[@type='email']'.</msg>
+<status status="PASS" starttime="20190115 20:19:37.439" endtime="20190115 20:19:37.705"></status>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <doc>Clicks button identified by ``locator``.</doc>
 <arguments>
 <arg>${NextButton}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:55.303" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
-<status status="PASS" starttime="20190115 18:24:55.302" endtime="20190115 18:24:55.584"></status>
+<msg timestamp="20190115 20:19:37.706" level="INFO">Clicking button '//button[@type='button'][contains(.,'Next')]'.</msg>
+<status status="PASS" starttime="20190115 20:19:37.705" endtime="20190115 20:19:37.975"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:54.864" endtime="20190115 18:24:55.584"></status>
+<status status="PASS" starttime="20190115 20:19:37.351" endtime="20190115 20:19:37.976"></status>
 </kw>
 <kw name="Enter Mobile Number" library="Trade">
 <tags>
@@ -2124,15 +2221,15 @@
 <assign>
 <var>${MobileNumber}</var>
 </assign>
-<msg timestamp="20190115 18:24:55.586" level="INFO">${MobileNumber} = 2122222222</msg>
-<status status="PASS" starttime="20190115 18:24:55.585" endtime="20190115 18:24:55.586"></status>
+<msg timestamp="20190115 20:19:37.977" level="INFO">${MobileNumber} = 2122222222</msg>
+<status status="PASS" starttime="20190115 20:19:37.977" endtime="20190115 20:19:37.977"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
 <arg>Enter a Mobile Number</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:55.586" endtime="20190115 18:24:55.586"></status>
+<status status="PASS" starttime="20190115 20:19:37.977" endtime="20190115 20:19:37.978"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
@@ -2140,23 +2237,23 @@
 <arg>${MobileNumberHeader}</arg>
 <arg>${DefaultTimeout}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:55.586" endtime="20190115 18:24:55.611"></status>
+<status status="PASS" starttime="20190115 20:19:37.978" endtime="20190115 20:19:38.003"></status>
 </kw>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
 <arg>${100%Progress}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:55.630" level="INFO">Element '//div[contains(@style,'width: 100%;')]' is displayed.</msg>
-<status status="PASS" starttime="20190115 18:24:55.612" endtime="20190115 18:24:55.630"></status>
+<msg timestamp="20190115 20:19:38.020" level="INFO">Element '//div[contains(@style,'width: 100%;')]' is displayed.</msg>
+<status status="PASS" starttime="20190115 20:19:38.004" endtime="20190115 20:19:38.020"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click element identified by ``locator``.</doc>
 <arguments>
 <arg>${PhoneNumberField}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:55.631" level="INFO">Clicking element '//input[@type='tel']'.</msg>
-<status status="PASS" starttime="20190115 18:24:55.631" endtime="20190115 18:24:55.693"></status>
+<msg timestamp="20190115 20:19:38.020" level="INFO">Clicking element '//input[@type='tel']'.</msg>
+<status status="PASS" starttime="20190115 20:19:38.020" endtime="20190115 20:19:38.071"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into text field identified by ``locator``.</doc>
@@ -2164,31 +2261,29 @@
 <arg>${PhoneNumberField}</arg>
 <arg>${MobileNumber}</arg>
 </arguments>
-<msg timestamp="20190115 18:24:55.693" level="INFO">Typing text '2122222222' into text field '//input[@type='tel']'.</msg>
-<status status="PASS" starttime="20190115 18:24:55.693" endtime="20190115 18:24:55.921"></status>
+<msg timestamp="20190115 20:19:38.072" level="INFO">Typing text '2122222222' into text field '//input[@type='tel']'.</msg>
+<status status="PASS" starttime="20190115 20:19:38.072" endtime="20190115 20:19:38.308"></status>
 </kw>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <doc>Waits until element ``locator`` is visible.</doc>
 <arguments>
 <arg>${SubmitBtn}</arg>
 </arguments>
-<status status="PASS" starttime="20190115 18:24:55.921" endtime="20190115 18:24:55.944"></status>
+<status status="PASS" starttime="20190115 20:19:38.308" endtime="20190115 20:19:38.333"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:55.585" endtime="20190115 18:24:55.944"></status>
-</kw>
-<status status="PASS" starttime="20190115 18:24:22.380" endtime="20190115 18:24:55.944"></status>
+<status status="PASS" starttime="20190115 20:19:37.976" endtime="20190115 20:19:38.333"></status>
 </kw>
 <kw name="End Web Test" library="Common" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20190115 18:24:55.945" endtime="20190115 18:24:56.039"></status>
+<status status="PASS" starttime="20190115 20:19:38.333" endtime="20190115 20:19:38.421"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:55.944" endtime="20190115 18:24:56.039"></status>
+<status status="PASS" starttime="20190115 20:19:38.333" endtime="20190115 20:19:38.421"></status>
 </kw>
-<status status="PASS" starttime="20190115 18:24:20.563" endtime="20190115 18:24:56.039" critical="yes"></status>
+<status status="PASS" starttime="20190115 20:19:09.465" endtime="20190115 20:19:38.421" critical="yes"></status>
 </test>
 <doc>Knock POC</doc>
-<status status="PASS" starttime="20190115 18:24:20.426" endtime="20190115 18:24:56.041"></status>
+<status status="PASS" starttime="20190115 20:19:09.281" endtime="20190115 20:19:38.423"></status>
 </suite>
 <statistics>
 <total>

@@ -52,6 +52,7 @@ Enter Invalid Address
     ${InvalidAddress}=  Set Variable  ${Invalid}
     ${InValidSearchResult}=  Set Variable   //li[@class='_jx6g50i'][contains(.,'${InvalidAddress}')]
     Log To Console  Entering a Invalid Address
+    Delete All Cookies
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${InvalidAddress}
     Wait Until Element is Visible  ${InValidSearchResult}  ${DefaultTimeout}
@@ -67,6 +68,7 @@ Expand Notification
     ${NotAvailableSearch}=  Set Variable  //li[@class='_jx6g50i'][contains(.,'${NotAvailableAddress}')]
     Log To Console  Enter an Address thats not covered
     go to  ${KnockURL}
+    Delete All Cookies
     sleep  2
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${NotAvailableAddress}
@@ -83,23 +85,38 @@ Enter Valid Address
     ${ValidSearchResult}=  Set Variable  //li[@class='_jx6g50i'][contains(.,'${ValidAddress}')]
     Log To Console  Entering a Valid Address
     go to  ${KnockURL}
+    Delete All Cookies
     sleep  2
     Click Element  ${EnterAddress}
     Click Button  ${GetTradeButton}
     Wait Until Element is Visible  ${EnterAddress}  ${DefaultTimeout}
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${ValidAddress}
-    Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
-    Click Element  ${ValidSearchResult}
-    Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
-    Wait Until Element is Visible   //div[contains(@class,'kstpkq')]
-    Click Element  ${FixAddressButton}
-    Wait Until Element is Visible  ${AddressFixHeader}  ${DefaultTimeout}
-    Click Button  ${NextButton}
-    Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
-    Click Button  ${CorrectButton}
-    Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
-    Capture Page Screenshot
+    ${AddressIsFound}=  run keyword and return status  element should not be visible  ${CouldNotFindAddress}
+    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
+    run keyword if  ${AddressIsFound}   Click Element  ${ValidSearchResult}
+    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    run keyword if  ${AddressIsFound}   Wait Until Element is Visible   ${EmptyProgressBar}
+    run keyword if  ${AddressIsFound}   Click Element  ${FixAddressButton}
+    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${AddressFixHeader}  ${DefaultTimeout}
+    run keyword if  ${AddressIsFound}   Click Button  ${NextButton}
+    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    run keyword if  ${AddressIsFound}   Click Button  ${CorrectButton}
+    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
+    ${AddressNotFound}=  run keyword and return status  element should be visible  ${CouldNotFindAddress}
+    run keyword if   ${AddressNotFound}  Click Element  ${AddressFormButton}
+    run keyword if   ${AddressNotFound}  Click Element  ${Address1}
+    run keyword if   ${AddressNotFound}  Input Text  ${Address1}   3692 Silver Brook Ln
+    run keyword if   ${AddressNotFound}  Click Element  ${City}
+    run keyword if   ${AddressNotFound}  Input Text  ${City}  Gainesville
+    run keyword if   ${AddressNotFound}  Click Element  ${State}
+    run keyword if   ${AddressNotFound}  click element   xpath=//option[contains(text(),'GA')]
+    run keyword if   ${AddressNotFound}  Click Element  ${Zip}
+    run keyword if   ${AddressNotFound}  Input Text  ${Zip}  30506
+    run keyword if   ${AddressNotFound}  Click Button  ${NextButton}
+    run keyword if   ${AddressNotFound}  Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    run keyword if   ${AddressNotFound}  Click Button  ${CorrectButton}
+    run keyword if   ${AddressNotFound}  Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
 
 
 Basic Facts
