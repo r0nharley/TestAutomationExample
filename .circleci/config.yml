@@ -7,13 +7,14 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
+      - run: sudo pip install selenium
       - run: wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/64.0.2/linux-x86_64/en-US/firefox-64.0.2.tar.bz2
       - run: tar xvf firefox*.tar.bz2
       - run: sudo mv firefox /usr/bin/firefox
       - run: sudo chown root:root /usr/bin/firefox
       - run: sudo chmod +x /usr/bin/firefox
 #     - run: ./firefox/firefox
-      - run: wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux32.tar.gz
+      - run: wget https://github.com/mozilla/geckodriver/releases/download/v0.23.0/geckodriver-v0.23.0-linux64.tar.gz
       - run: tar -xvzf geckodriver*
       - run: sudo mv geckodriver /usr/bin/geckodriver
       - run: sudo chown root:root /usr/bin/geckodriver
