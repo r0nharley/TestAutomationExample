@@ -12,7 +12,7 @@ Test Teardown  End Web Test
 
 *** Variables ***
 
-${BROWSER}   chrome
+${BROWSER}   headlessfirefox
 
 
 
@@ -20,23 +20,23 @@ ${BROWSER}   chrome
 
 *** Test Cases ***
 
-#Navigate to Page
-#    Log To Console  Navigating to Knock.com
-#    Trade.Navigate to Page
-#
-#Enter Invalid Address
-#    Log To Console  Entering a Invalid Address
-#    Trade.Navigate to Page
-#    Trade.Enter Invalid Address  3691 Silver Brook Ln, Gainesville, GA
-#
-#
-#Expand Notification
-#    Log To Console  Enter an Address thats not covered
-#    Trade.Expand Notification  1455 Biscayne Boulevard, Miami, FL
-#
-#Enter Valid Address
-#    Log To Console  Entering a Valid Address
-#    Trade.Enter Valid Address  3692 Silver Brook Ln, Gainesville, GA
+Navigate to Page
+    Log To Console  Navigating to Knock.com
+    Trade.Navigate to Page
+
+Enter Invalid Address
+    Log To Console  Entering a Invalid Address
+    Trade.Navigate to Page
+    Trade.Enter Invalid Address  3691 Silver Brook Ln, Gainesville, GA
+
+
+Expand Notification
+    Log To Console  Enter an Address thats not covered
+    Trade.Expand Notification  1455 Biscayne Boulevard, Miami, FL
+
+Enter Valid Address
+    Log To Console  Entering a Valid Address
+    Trade.Enter Valid Address  3692 Silver Brook Ln, Gainesville, GA
 
 Fill In Trade-in Form
     Trade.Navigate to Page

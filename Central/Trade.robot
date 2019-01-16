@@ -51,15 +51,28 @@ Enter Invalid Address
     [Arguments]  ${Invalid}
     ${InvalidAddress}=  Set Variable  ${Invalid}
     ${InValidSearchResult}=  Set Variable   //li[@class='_jx6g50i'][contains(.,'${InvalidAddress}')]
-    Log To Console  Entering a Invalid Address
-    Delete All Cookies
+    Log To Console  Entering a Invalid Address  ${CouldNotFindAddress}
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${InvalidAddress}
-    Wait Until Element is Visible  ${InValidSearchResult}  ${DefaultTimeout}
-    Click Element  ${InValidSearchResult}
-    Capture Page Screenshot
-    Wait Until Element is Visible  ${AlreadySubmittedText}  20
-
+    ${InValidAddressIsFound}=  run keyword and return status  element should not be visible  ${CouldNotFindAddress}
+    run keyword if  ${InValidAddressIsFound}   Log to console  Address found proceeding with workflow
+    run keyword if  ${InValidAddressIsFound}  Wait Until Element is Visible  ${InValidSearchResult}  ${DefaultTimeout}
+    run keyword if  ${InValidAddressIsFound}  Click Element  ${InValidSearchResult}
+    run keyword if  ${InValidAddressIsFound}  Capture Page Screenshot
+    run keyword if  ${InValidAddressIsFound}  Wait Until Element is Visible  ${AlreadySubmittedText}  20
+    ${InValidAddressNotFound}=  run keyword and return status   element should be visible  ${CouldNotFindAddress}
+    run keyword if   ${InValidAddressNotFound}  Log to console  Address NOT found proceeding with Manual entry workflow
+    run keyword if   ${InValidAddressNotFound}  Click Element  ${AddressFormButton}
+    run keyword if   ${InValidAddressNotFound}  Click Element  ${Address1}
+    run keyword if   ${InValidAddressNotFound}  Input Text  ${Address1}   3691 Silver Brook Ln
+    run keyword if   ${InValidAddressNotFound}  Click Element  ${City}
+    run keyword if   ${InValidAddressNotFound}  Input Text  ${City}  Gainesville
+    run keyword if   ${InValidAddressNotFound}  Click Element  ${State}
+    run keyword if   ${InValidAddressNotFound}  click element   xpath=//option[contains(text(),'GA')]
+    run keyword if   ${InValidAddressNotFound}  Click Element  ${Zip}
+    run keyword if   ${InValidAddressNotFound}  Input Text  ${Zip}  30506
+    run keyword if   ${InValidAddressNotFound}  Click Button  ${NextButton}
+    run keyword if   ${InValidAddressNotFound}  Wait Until Element is Visible  ${AlreadySubmittedText}  20
 
 Expand Notification
     [Tags]  Not Operating in your Area
@@ -72,10 +85,25 @@ Expand Notification
     sleep  2
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${NotAvailableAddress}
-    Wait Until Element is Visible  ${NotAvailableSearch}  ${DefaultTimeout}
-    Click Element  ${NotAvailableSearch}
-    Capture Page Screenshot
-    Wait Until Element is Visible  ${NotAvailableHeader}  20
+    ${UnSupportedAddressFound}=  run keyword and return status  element should not be visible  ${CouldNotFindAddress}
+    run keyword if  ${UnSupportedAddressFound}  Wait Until Element is Visible  ${NotAvailableSearch}  ${DefaultTimeout}
+    run keyword if  ${UnSupportedAddressFound}  Click Element  ${NotAvailableSearch}
+    run keyword if  ${UnSupportedAddressFound}  Capture Page Screenshot
+    run keyword if  ${UnSupportedAddressFound}  Wait Until Element is Visible  ${NotAvailableHeader}  20
+    ${UnSupportedAddressNotFound}=  run keyword and return status  element should be visible  ${CouldNotFindAddress}
+    run keyword if  ${UnSupportedAddressNotFound}  Log to console  Address NOT found proceeding with Manual entry workflow
+    run keyword if  ${UnSupportedAddressNotFound}  Click Element  ${AddressFormButton}
+    run keyword if  ${UnSupportedAddressNotFound}  Click Element  ${Address1}
+    run keyword if  ${UnSupportedAddressNotFound}  Input Text  ${Address1}   1455 Biscayne Boulevard
+    run keyword if  ${UnSupportedAddressNotFound}  Click Element  ${City}
+    run keyword if  ${UnSupportedAddressNotFound}  Input Text  ${City}  Miami
+    run keyword if  ${UnSupportedAddressNotFound}  Click Element  ${State}
+    run keyword if  ${UnSupportedAddressNotFound}  click element   xpath=//option[contains(text(),'FL')]
+    run keyword if  ${UnSupportedAddressNotFound}  Click Element  ${Zip}
+    run keyword if  ${UnSupportedAddressNotFound}  Input Text  ${Zip}  33132
+    run keyword if  ${UnSupportedAddressNotFound}  Click Button  ${NextButton}
+    run keyword if  ${UnSupportedAddressNotFound}  Wait Until Element is Visible  ${NotAvailableHeader}  20
+
 
 
 Enter Valid Address
@@ -92,33 +120,33 @@ Enter Valid Address
     Wait Until Element is Visible  ${EnterAddress}  ${DefaultTimeout}
     Click Element  ${EnterAddress}
     Input Text  ${EnterAddress}  ${ValidAddress}
-    ${AddressIsFound}=  run keyword and return status  element should not be visible  ${CouldNotFindAddress}
-    run keyword if  ${AddressIsFound}   Log to console  Address found proceeding with workflow
-    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
-    run keyword if  ${AddressIsFound}   Click Element  ${ValidSearchResult}
-    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
-    run keyword if  ${AddressIsFound}   Wait Until Element is Visible   ${EmptyProgressBar}
-    run keyword if  ${AddressIsFound}   Click Element  ${FixAddressButton}
-    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${AddressFixHeader}  ${DefaultTimeout}
-    run keyword if  ${AddressIsFound}   Click Button  ${NextButton}
-    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
-    run keyword if  ${AddressIsFound}   Click Button  ${CorrectButton}
-    run keyword if  ${AddressIsFound}   Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
-    ${AddressNotFound}=  run keyword and return status  element should be visible  ${CouldNotFindAddress}
-    run keyword if   ${AddressNotFound}  Log to console  Address NOT found proceeding with Manual entry workflow
-    run keyword if   ${AddressNotFound}  Click Element  ${AddressFormButton}
-    run keyword if   ${AddressNotFound}  Click Element  ${Address1}
-    run keyword if   ${AddressNotFound}  Input Text  ${Address1}   3692 Silver Brook Ln
-    run keyword if   ${AddressNotFound}  Click Element  ${City}
-    run keyword if   ${AddressNotFound}  Input Text  ${City}  Gainesville
-    run keyword if   ${AddressNotFound}  Click Element  ${State}
-    run keyword if   ${AddressNotFound}  click element   xpath=//option[contains(text(),'GA')]
-    run keyword if   ${AddressNotFound}  Click Element  ${Zip}
-    run keyword if   ${AddressNotFound}  Input Text  ${Zip}  30506
-    run keyword if   ${AddressNotFound}  Click Button  ${NextButton}
-    run keyword if   ${AddressNotFound}  Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
-    run keyword if   ${AddressNotFound}  Click Button  ${CorrectButton}
-    run keyword if   ${AddressNotFound}  Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
+    ${ValidAddressIsFound}=  run keyword and return status  element should not be visible  ${CouldNotFindAddress}
+    run keyword if  ${ValidAddressIsFound}   Log to console  Address found proceeding with workflow
+    run keyword if  ${ValidAddressIsFound}   Wait Until Element is Visible  ${ValidSearchResult}  ${DefaultTimeout}
+    run keyword if  ${ValidAddressIsFound}   Click Element  ${ValidSearchResult}
+    run keyword if  ${ValidAddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    run keyword if  ${ValidAddressIsFound}   Wait Until Element is Visible   ${EmptyProgressBar}
+    run keyword if  ${ValidAddressIsFound}   Click Element  ${FixAddressButton}
+    run keyword if  ${ValidAddressIsFound}   Wait Until Element is Visible  ${AddressFixHeader}  ${DefaultTimeout}
+    run keyword if  ${ValidAddressIsFound}   Click Button  ${NextButton}
+    run keyword if  ${ValidAddressIsFound}   Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    run keyword if  ${ValidAddressIsFound}   Click Button  ${CorrectButton}
+    run keyword if  ${ValidAddressIsFound}  Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
+    ${ValidAddressNotFound}=  run keyword and return status  element should be visible  ${CouldNotFindAddress}
+    run keyword if   ${ValidAddressNotFound}  Log to console  Address NOT found proceeding with Manual entry workflow
+    run keyword if   ${ValidAddressNotFound}  Click Element  ${AddressFormButton}
+    run keyword if   ${ValidAddressNotFound}  Click Element  ${Address1}
+    run keyword if   ${ValidAddressNotFound}  Input Text  ${Address1}   3692 Silver Brook Ln
+    run keyword if   ${ValidAddressNotFound}  Click Element  ${City}
+    run keyword if   ${ValidAddressNotFound}  Input Text  ${City}  Gainesville
+    run keyword if   ${ValidAddressNotFound}  Click Element  ${State}
+    run keyword if   ${ValidAddressNotFound}  click element   xpath=//option[contains(text(),'GA')]
+    run keyword if   ${ValidAddressNotFound}  Click Element  ${Zip}
+    run keyword if   ${ValidAddressNotFound}  Input Text  ${Zip}  30506
+    run keyword if   ${ValidAddressNotFound}  Click Button  ${NextButton}
+    run keyword if   ${ValidAddressNotFound}  Wait Until Element is Visible  ${IsAddressCorrectCopy}  ${DefaultTimeout}
+    run keyword if   ${ValidAddressNotFound}  Click Button  ${CorrectButton}
+    run keyword if   ${ValidAddressNotFound}  Wait Until Element is Visible  ${LetsStartCopy}  ${DefaultTimeout}
 
 
 Basic Facts

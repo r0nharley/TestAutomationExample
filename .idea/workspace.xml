@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87aa7f7a-adc2-4bde-abd8-f5ed29474550" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Central/Launch.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Central/Launch.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Central/Trade.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Central/Trade.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/results/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/results/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/results/report.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Central/Launch.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            <state relative-caret-position="720">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
               <folding>
                 <element signature="e#0#184#0" expanded="true" />
               </folding>
@@ -39,8 +43,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Central/Trade.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="107" column="103" selection-start-line="107" selection-start-column="103" selection-end-line="107" selection-end-column="103" />
+            <state relative-caret-position="-844">
+              <caret line="104" column="49" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
               <folding>
                 <element signature="e#0#131#0" expanded="true" />
               </folding>
@@ -72,8 +76,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Central/Common.robot" />
-        <option value="$PROJECT_DIR$/Central/Launch.robot" />
         <option value="$PROJECT_DIR$/Central/Variables.robot" />
+        <option value="$PROJECT_DIR$/Central/Launch.robot" />
         <option value="$PROJECT_DIR$/Central/Trade.robot" />
       </list>
     </option>
@@ -150,7 +154,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56143000" />
+    <option name="totallyTimeSpent" value="57767000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1971" y="92" width="1387" height="1011" extended-state="0" />
@@ -213,8 +217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Central/Launch.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        <state relative-caret-position="720">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding>
             <element signature="e#0#184#0" expanded="true" />
           </folding>
@@ -223,8 +227,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Central/Trade.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="107" column="103" selection-start-line="107" selection-start-column="103" selection-end-line="107" selection-end-column="103" />
+        <state relative-caret-position="-844">
+          <caret line="104" column="49" selection-start-line="104" selection-start-column="49" selection-end-line="104" selection-end-column="49" />
           <folding>
             <element signature="e#0#131#0" expanded="true" />
           </folding>
