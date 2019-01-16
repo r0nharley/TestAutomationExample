@@ -20,5 +20,5 @@ jobs:
       - run:  tar -xvzf geckodriver*
       - run:  sudo mv geckodriver /usr/bin/geckodriver
       - run:  sudo chown root:root /usr/bin/geckodriver
-      - run:  sudo chmod +x /usr/bin/chromedriver
+      - run:  sudo chmod +x /usr/bin/geckodriver
       - run:  robot -d results  Central/Launch.robot
