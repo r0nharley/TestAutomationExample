@@ -7,10 +7,18 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-      - run:  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-      - run:  wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
-      - run:  unzip chromedriver_linux64.zip
-      - run:  sudo mv chromedriver /usr/bin/chromedriver
-      - run:  sudo chown root:root /usr/bin/chromedriver
+#      - run:  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#      - run:  wget https://chromedriver.storage.googleapis.com/2.45/chromedriver_linux64.zip
+#      - run:  unzip chromedriver_linux64.zip
+#      - run:  sudo mv chromedriver /usr/bin/chromedriver
+#      - run:  sudo chown root:root /usr/bin/chromedriver
+#      - run:  sudo chmod +x /usr/bin/chromedriver
+
+      - run:  wget https://download-installer.cdn.mozilla.net/pub/firefox/releases/64.0.2/linux-x86_64/en-US/firefox-64.0.2.tar.bz2
+      - run:  tar xvf firefox*.tar.bz2
+      - run:  wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+      - run:  tar -xvzf geckodriver*
+      - run:  sudo mv geckodriver /usr/bin/geckodriver
+      - run:  sudo chown root:root /usr/bin/geckodriver
       - run:  sudo chmod +x /usr/bin/chromedriver
       - run:  robot -d results  Central/Launch.robot
