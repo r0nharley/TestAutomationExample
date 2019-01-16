@@ -7,5 +7,6 @@ jobs:
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-      - run: sudo pip install webdriverdownloader
+      - run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      - run: brew install geckodriver
       - run: robot -d results  Central/Launch.robot
