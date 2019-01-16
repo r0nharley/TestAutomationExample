@@ -2,11 +2,9 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:2.7
+      - image: circleci/python:2.7-jessie-node-browsers-legacy
     working_directory:  ~/RobotFramework
     steps:
       - checkout
       - run: sudo pip install -r requirements.txt
-      - run: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      - run: brew install geckodriver
-      - run: robot -d results  Central/Launch.robot
+      - run:  robot -d results  Central/Launch.robot
