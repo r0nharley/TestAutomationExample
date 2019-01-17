@@ -1,7 +1,7 @@
 
-# Trade-in workflow automation example
+# Test automation example
 
-Test Automation with Robot Framework proof of concept.  This script runs through the Knock Trade-In workflow.
+Test Automation with Robot Framework proof of concept.  
 
 ## Getting Started
 
